@@ -1,0 +1,29 @@
+/* .dispo {
+  background-color: lightgray;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.margine-card {
+  margin-top: 20px;
+}
+
+.flessibile {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 375px) {
+  .flessibile {
+    float: none;
+    display: block;
+  }
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.margine-des {
+  margin-top: 10px;
+} */
