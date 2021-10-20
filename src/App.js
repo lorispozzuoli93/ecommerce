@@ -1,13 +1,18 @@
 import "./App.css";
-import ListaProdotti from "./Component/ListaProdotti";
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./Component/Home";
+import DettaglioProdotto from "./Component/DettaglioProdotto";
 import Footer from "./Component/Footer";
 
 function App() {
   return (
-    <div>
-      <ListaProdotti />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div>
+        <Route path="/prodotto/:id" component={DettaglioProdotto}></Route>
+        <Route path="/" component={Home} exact></Route>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

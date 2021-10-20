@@ -5,22 +5,29 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 
 export default function Prodotto(props) {
+  const { prodotto } = props;
   return (
-    <Card>
-      <CardMedia
-        component="img"
-        image="https://picsum.photos/350/350"
-        alt="product"
-      />
+    <Card key={prodotto.UPC}>
+      <a href={`/prodotto/${prodotto.UPC}`}>
+        <CardMedia
+          component="img"
+          image="https://picsum.photos/350/350"
+          alt={prodotto.name}
+        />
+      </a>
       <CardContent>
-        <Typography gutterBottom variant="h4" component="div">
-          {props.name}
-        </Typography>
-        <Typography variant="h5" color="text.secondary">
-          {props.price}
+        <Typography gutterBottom variant="h5" component="div">
+          {prodotto.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {props.stock > 0 ? <p>In stock</p> : <p>Out of stock</p>}
+          {prodotto.price.current.value}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {prodotto.availability.stock > 0 ? (
+            <p>In stock</p>
+          ) : (
+            <p>Out of stock</p>
+          )}
         </Typography>
       </CardContent>
     </Card>
