@@ -479,7 +479,7 @@ export default function ListaProdotti() {
           >
             {prodotti &&
               prodotti.map((prodotto, index) => (
-                <Grid item xs={3} sm={3} md={3} key={index}>
+                <Grid item xs={12} sm={6} md={3} key={index}>
                   <Prodotto
                     name={prodotto.name}
                     price={prodotto.price.current.value}

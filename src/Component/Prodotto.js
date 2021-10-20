@@ -13,14 +13,14 @@ export default function Prodotto(props) {
         alt="product"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h4" component="div">
           {props.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="h5" color="text.secondary">
           {props.price}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {props.stock}
+          {props.stock > 0 ? <p>In stock</p> : <p>Out of stock</p>}
         </Typography>
       </CardContent>
     </Card>

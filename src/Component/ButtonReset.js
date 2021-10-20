@@ -1,11 +1,13 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
 
-export default function ContainedButtonsReset() {
+export default function ContainedButtonsReset(props) {
   return (
     <Stack direction="row">
-      <Button variant="contained">Reset</Button>
+      <Button variant="contained" onClick={() => props.reset()}>
+        Reset
+      </Button>
     </Stack>
   );
 }

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -122,6 +123,8 @@ export default function NavBar(props) {
     </Menu>
   );
 
+  const [text, setText] = useState("");
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -143,10 +146,17 @@ export default function NavBar(props) {
               inputProps={{ "aria-label": "search" }}
               onChange={(e) => {
                 props.cerca(e.target.value);
+                setText(e.target.value);
               }}
+              value={text}
             />
           </Search>
-          <ContainedButtonsReset />
+          <ContainedButtonsReset
+            reset={() => {
+              props.cerca("");
+              setText("");
+            }}
+          />
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <ContainedButtons
