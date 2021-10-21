@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import Prodotto from "./Prodotto.js";
 import NavBar from "./NavBar.js";
 import prodottiTot from "../ProdottiTot.js";
+import Footer from "./Footer.js";
 
 export default function Home() {
   const [prodotti, setProdotti] = useState(prodottiTot);
@@ -98,6 +99,7 @@ export default function Home() {
           </Grid>
         </Box>
       </Container>
+      <Footer />
     </React.Fragment>
   );
 }
