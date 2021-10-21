@@ -1,17 +1,43 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 export default function ContainedButtons(props) {
+  const [alignment, setAlignment] = React.useState("web");
+
+  const handleChange = (event, newAlignment) => {
+    setAlignment(newAlignment);
+  };
+
   return (
-    <Stack direction="row" spacing={2}>
-      <Button variant="contained" onClick={() => props.toggle("all")}>
+    <ToggleButtonGroup
+      sx={{ m: 2 }}
+      color="primary"
+      value={alignment}
+      exclusive
+      onChange={handleChange}
+    >
+      <ToggleButton
+        value="ALL"
+        variant="contained"
+        onClick={() => props.toggle("all")}
+      >
         ALL
-      </Button>
-      <Button variant="contained" onClick={() => props.toggle("in")}>
+      </ToggleButton>
+      <ToggleButton
+        value="IN STOCK"
+        variant="contained"
+        onClick={() => props.toggle("in")}
+      >
         IN STOCK
-      </Button>
-      <Button variant="contained" onClick={() => props.toggle("out")}>OUT OF STOCK</Button>
-    </Stack>
+      </ToggleButton>
+      <ToggleButton
+        value="OUT OF STOCK"
+        variant="contained"
+        onClick={() => props.toggle("out")}
+      >
+        OUT OF STOCK
+      </ToggleButton>
+    </ToggleButtonGroup>
   );
 }

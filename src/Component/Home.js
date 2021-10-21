@@ -6,10 +6,11 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Prodotto from "./Prodotto.js";
 import NavBar from "./NavBar.js";
-import prodottiTot from "../ProdottiTot.js";
+import prodottiTot from "../Data.js";
 import Footer from "./Footer.js";
 
 export default function Home() {
+  // imposto 3 use state prendendo prodotti la search e toggle partendo prima con il mio json con la search da vuoto e toggle con all quindi tutti i prodotti anche out of stock
   const [prodotti, setProdotti] = useState(prodottiTot);
 
   const [searchQuery, setSearchQuery] = useState("");

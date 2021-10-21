@@ -2,7 +2,7 @@ import React from "react";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import prodottiTot from "../ProdottiTot";
+import prodottiTot from "../Data";
 import { Link } from "react-router-dom";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
@@ -12,9 +12,9 @@ import Button from "@mui/material/Button";
 
 export default function DettaglioProdotto(props) {
   const prodotto = prodottiTot.find((x) => x.UPC === props.match.params.id);
-  if (!prodotto) {
-    return <div>Prodotto non trovato</div>;
-  }
+  // if (!prodotto) {
+  //   return <div>Prodotto non trovato</div>;
+  // }
   return (
     <React.Fragment>
       <Container maxWidth="false">
