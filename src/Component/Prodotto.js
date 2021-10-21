@@ -3,6 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import Chip from "@mui/material/Chip";
 
 export default function Prodotto(props) {
   const { prodotto } = props;
@@ -24,9 +25,9 @@ export default function Prodotto(props) {
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {prodotto.availability.stock > 0 ? (
-            <p>In stock</p>
+            <Chip label="In stock" />
           ) : (
-            <p>Out of stock</p>
+            <Chip label="Out of stock" />
           )}
         </Typography>
       </CardContent>

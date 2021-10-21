@@ -86,7 +86,7 @@ export default function Home() {
                   }
                 })
                 .map((prodotto, index) => (
-                  <Grid item xs={3} sm={3} md={3} key={index}>
+                  <Grid item xs={12} sm={12} md={3} key={index}>
                     <Prodotto
                       // name={prodotto.name}
                       // price={prodotto.price.current.value}
