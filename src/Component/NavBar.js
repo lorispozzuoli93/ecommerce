@@ -11,15 +11,15 @@ export default function NavBar(props) {
 
   return (
     <Box sx={{ flexGrow: 1, bgcolor: "white", borderBottom: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={2} md={8} lg={4}>
+      <Grid container spacing={0}>
+        <Grid item xs={12} sm={12} md={4} lg={4}>
           <img
             className="block"
             src="https://via.placeholder.com/150x80"
             alt="logo"
           />
         </Grid>
-        <Grid item xs={6} md={8} lg={4}>
+        <Grid item xs={12} sm={6} md={4} lg={4}>
           <ContainedButtons
             toggle={(value) => {
               props.toggle(value);
@@ -27,7 +27,7 @@ export default function NavBar(props) {
             selected={props.selected}
           />
         </Grid>
-        <Grid item xs={12} md={8} lg={4}>
+        <Grid item xs={12} sm={6} md={4} lg={4}>
           <TextField
             label={"Search"}
             sx={{ mt: 1, ml: 1, width: "65%" }}

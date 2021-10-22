@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 
 export default function ContainedButtons(props) {
   return (
-    <Box mt={2}>
+    <Box mt={3} ml={1}>
       <ButtonGroup>
         <Button
           variant={props.selected == "all" ? "contained" : "outlined"}
