@@ -1,11 +1,14 @@
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import Link from '@material-ui/core/Link';
+import * as React from "react";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import Link from "@material-ui/core/Link";
+import CssBaseline from "@mui/material/CssBaseline";
 
 export default function Footer() {
   return (
-    <footer>
+    <React.Fragment>
+      <CssBaseline />
       <Box
         px={{ xs: 3, sm: 10 }}
         py={{ xs: 5, sm: 10 }}
@@ -69,6 +72,38 @@ export default function Footer() {
           </Box>
         </Container>
       </Box>
-    </footer>
+    </React.Fragment>
   );
 }
+
+
+// import * as React from 'react';
+// import Button from '@mui/material/Button';
+// import ButtonGroup from '@mui/material/ButtonGroup';
+// import Box from '@mui/material/Box';
+
+// export default function VariantButtonGroup() {
+//   return (
+//     <Box
+//       sx={{
+//         display: 'flex',
+//         flexDirection: 'column',
+//         alignItems: 'center',
+//         '& > *': {
+//           m: 1,
+//         },
+//       }}
+//     >
+//       <ButtonGroup variant="outlined" aria-label="outlined button group">
+//         <Button>One</Button>
+//         <Button>Two</Button>
+//         <Button>Three</Button>
+//       </ButtonGroup>
+//       <ButtonGroup variant="text" aria-label="text button group">
+//         <Button>One</Button>
+//         <Button>Two</Button>
+//         <Button>Three</Button>
+//       </ButtonGroup>
+//     </Box>
+//   );
+// }

@@ -13,7 +13,7 @@ export default function Prodotto(props) {
       <CardActionArea href={`/prodotto/${prodotto.UPC}`}>
         <CardMedia
           component="img"
-          image="https://picsum.photos/350/350"
+          image="https://via.placeholder.com/350"
           alt={prodotto.name}
         />
         <CardContent>

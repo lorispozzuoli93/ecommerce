@@ -42,13 +42,18 @@ export default function NavBar(props) {
     bgcolor: "white",
     borderColor: "text.primary",
   };
+
   const [text, setText] = useState("");
 
   return (
     <Box sx={{ flexGrow: 1, ...commonStyles, borderBottom: 1 }}>
-      <Grid container spacing={12}>
-        <Grid item xs={6} md={8} lg={4}>
-          <img src="https://picsum.photos/150/80" alt="logo" />
+      <Grid container spacing={2}>
+        <Grid item xs={2} md={8} lg={4}>
+          <img
+            className="block"
+            src="https://via.placeholder.com/150x80"
+            alt="logo"
+          />
         </Grid>
         <Grid item xs={6} md={8} lg={4}>
           <ContainedButtons
@@ -57,29 +62,27 @@ export default function NavBar(props) {
             }}
           />
         </Grid>
-        <Grid item xs={6} md={8} lg={4}>
-          <Stack direction="row">
-            <TextField
-              label={"Search..."}
-              sx={{ m: 1 }}
-              // prendo cerca e toggle che ho impostato nella home passando i props e prendendo il valore che ho quando digito idem per set text che ho impostato vuoto
-              onChange={(e) => {
-                props.cerca(e.target.value);
-                setText(e.target.value);
-              }}
-              value={text}
-            ></TextField>
-            <Button
-              sx={{ m: 1 }}
-              variant="contained"
-              onClick={() => {
-                props.cerca("");
-                setText("");
-              }}
-            >
-              Reset
-            </Button>
-          </Stack>
+        <Grid item xs={12} md={8} lg={4}>
+          <TextField
+            label={"Search"}
+            sx={{ mt: 1, ml: 1, width: "60%" }}
+            // prendo cerca e toggle che ho impostato nella home passando i props e prendendo il valore che ho quando digito idem per set text che ho impostato vuoto
+            onChange={(e) => {
+              props.cerca(e.target.value);
+              setText(e.target.value);
+            }}
+            value={text}
+          ></TextField>
+          <Button
+            sx={{ mt: 2, ml: 2 }}
+            variant="contained"
+            onClick={() => {
+              props.cerca("");
+              setText("");
+            }}
+          >
+            Reset
+          </Button>
         </Grid>
       </Grid>
     </Box>

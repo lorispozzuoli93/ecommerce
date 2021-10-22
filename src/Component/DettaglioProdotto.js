@@ -28,7 +28,7 @@ export default function DettaglioProdotto(props) {
               <Card>
                 <CardMedia
                   component="img"
-                  image="https://picsum.photos/350/350"
+                  image="https://via.placeholder.com/350"
                   alt={prodotto.name}
                 />
                 <Card>
