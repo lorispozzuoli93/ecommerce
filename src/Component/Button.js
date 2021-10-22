@@ -5,15 +5,26 @@ import Box from "@mui/material/Box";
 
 export default function ContainedButtons(props) {
   return (
-    <Box
-      sx={{
-        mt: 3,
-      }}
-    >
-      <ButtonGroup variant="outlined" aria-label="outlined button group">
-        <Button onClick={() => props.toggle("all")}>ALL</Button>
-        <Button onClick={() => props.toggle("in")}>IN STOCK</Button>
-        <Button onClick={() => props.toggle("out")}>OUT OF STOCK</Button>
+    <Box mt={2}>
+      <ButtonGroup>
+        <Button
+          variant={props.selected == "all" ? "contained" : "outlined"}
+          onClick={() => props.toggle("all")}
+        >
+          ALL
+        </Button>
+        <Button
+          variant={props.selected == "in" ? "contained" : "outlined"}
+          onClick={() => props.toggle("in")}
+        >
+          IN STOCK
+        </Button>
+        <Button
+          variant={props.selected == "out" ? "contained" : "outlined"}
+          onClick={() => props.toggle("out")}
+        >
+          OUT OF STOCK
+        </Button>
       </ButtonGroup>
     </Box>
   );
