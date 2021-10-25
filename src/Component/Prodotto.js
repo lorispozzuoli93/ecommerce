@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
-import { CardActionArea} from "@mui/material";
+import { CardActionArea } from "@mui/material";
 
 export default function Prodotto(props) {
   const { prodotto } = props;
@@ -17,13 +17,13 @@ export default function Prodotto(props) {
           alt={prodotto.name}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography variant="h5" component="div">
             {prodotto.name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
             $ {prodotto.price.current.value}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
             {prodotto.availability.stock > 0 ? (
               <Chip label="In stock" />
             ) : (

@@ -27,7 +27,7 @@ export default function Home() {
           }}
           selected={toggle}
         />
-        <Grid container p={2} spacing={{ xs: 2, md: 2 }} flex={1}>
+        <Grid container pl={2} pt={2} spacing={{ xs: 2, md: 2 }} flex={1}>
           {prodotti &&
             prodotti
               .filter((prod) => {
