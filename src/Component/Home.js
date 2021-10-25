@@ -17,43 +17,110 @@ export default function Home() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <NavBar
-        search={(text) => {
-          setSearchQuery(text);
-        }}
-        toggle={(value) => {
-          setToggle(value);
-        }}
-        selected={toggle}
-      />
-      <Grid container pl={2} pt={2} spacing={{ xs: 2, md: 2 }}>
-        {prodotti &&
-          prodotti
-            .filter((prod) => {
-              switch (toggle) {
-                case "all":
-                  return prod.name
-                    .toLowerCase()
-                    .includes(searchQuery.toLowerCase());
-                case "in":
-                  return (
-                    prod.availability.stock > 0 &&
-                    prod.name.toLowerCase().includes(searchQuery.toLowerCase())
-                  );
-                default:
-                  return (
-                    prod.availability.stock <= 0 &&
-                    prod.name.toLowerCase().includes(searchQuery.toLowerCase())
-                  );
-              }
-            })
-            .map((prodotto, index) => (
-              <Grid item xs={12} sm={12} md={3} key={index}>
-                <Prodotto prodotto={prodotto} />
-              </Grid>
-            ))}
+      <Grid container direction="column" minHeight="100vh">
+        <NavBar
+          search={(text) => {
+            setSearchQuery(text);
+          }}
+          toggle={(value) => {
+            setToggle(value);
+          }}
+          selected={toggle}
+        />
+        <Grid container p={2} spacing={{ xs: 2, md: 2 }} flex={1}>
+          {prodotti &&
+            prodotti
+              .filter((prod) => {
+                switch (toggle) {
+                  case "all":
+                    return prod.name
+                      .toLowerCase()
+                      .includes(searchQuery.toLowerCase());
+                  case "in":
+                    return (
+                      prod.availability.stock > 0 &&
+                      prod.name
+                        .toLowerCase()
+                        .includes(searchQuery.toLowerCase())
+                    );
+                  default:
+                    return (
+                      prod.availability.stock <= 0 &&
+                      prod.name
+                        .toLowerCase()
+                        .includes(searchQuery.toLowerCase())
+                    );
+                }
+              })
+              .map((prodotto, index) => (
+                <Grid item xs={12} sm={12} md={3}>
+                  <Prodotto prodotto={prodotto} key={index} />
+                </Grid>
+              ))}
+        </Grid>
+        <Grid xs={12}>
+          <Footer />
+        </Grid>
       </Grid>
-      <Footer />
     </React.Fragment>
   );
+}
+
+{
+  /* <React.Fragment>
+      <CssBaseline />
+      <Grid container direction="column" minHeight="100vh">
+        <Grid item xs={12}>
+          <NavBar
+            search={(text) => {
+              setSearchQuery(text);
+            }}
+            toggle={(value) => {
+              setToggle(value);
+            }}
+            selected={toggle}
+          />
+        </Grid>
+        <Grid item xs={12} columns={{ xs: 4, sm: 3, md: 3 }}>
+          <Grid
+            container
+            columns={{ xs: 4, sm: 3, md: 3 }}
+            spacing={2}
+            flex={1}
+            p={2}
+          >
+            <Grid item xs={2} sm={2} md={3}>
+              {prodotti &&
+                prodotti
+                  .filter((prod) => {
+                    switch (toggle) {
+                      case "all":
+                        return prod.name
+                          .toLowerCase()
+                          .includes(searchQuery.toLowerCase());
+                      case "in":
+                        return (
+                          prod.availability.stock > 0 &&
+                          prod.name
+                            .toLowerCase()
+                            .includes(searchQuery.toLowerCase())
+                        );
+                      default:
+                        return (
+                          prod.availability.stock <= 0 &&
+                          prod.name
+                            .toLowerCase()
+                            .includes(searchQuery.toLowerCase())
+                        );
+                    }
+                  })
+                  .map((prodotto, index) => (
+                    <Prodotto prodotto={prodotto} key={index} />
+                  ))}
+            </Grid>
+          </Grid>
+        </Grid>
+        <Footer />
+      </Grid>
+    </React.Fragment> */
 }

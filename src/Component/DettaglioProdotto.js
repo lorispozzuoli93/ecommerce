@@ -1,5 +1,4 @@
 import React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
@@ -15,42 +14,36 @@ export default function DettaglioProdotto(props) {
   //   return <div>Prodotto non trovato</div>;
   // }
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <Grid
-        container
-        spacing={{ xs: 2, md: 2 }}
-      >
-        <Grid item xs={12} sm={12} md={3}>
+    <Grid container spacing={{ xs: 2, md: 2 }}>
+      <Grid item xs={12} sm={12} md={3}>
+        <Card>
+          <CardMedia
+            component="img"
+            image="https://via.placeholder.com/350"
+            alt={prodotto.name}
+          />
           <Card>
-            <CardMedia
-              component="img"
-              image="https://via.placeholder.com/350"
-              alt={prodotto.name}
-            />
-            <Card>
-              <Typography gutterBottom variant="h4" component="div">
-                {prodotto.name}
-              </Typography>
-              <Typography variant="h5" color="text.secondary">
-                $ {prodotto.price.current.value}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {prodotto.availability.stock > 0 ? (
-                  <Chip label="In stock" />
-                ) : (
-                  <Chip label="Out of stock" />
-                )}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                <Button variant="contained">
-                  <Link to="/ecommerce">Torna indietro</Link>
-                </Button>
-              </Typography>
-            </Card>
+            <Typography gutterBottom variant="h4" component="div">
+              {prodotto.name}
+            </Typography>
+            <Typography variant="h5" color="text.secondary">
+              $ {prodotto.price.current.value}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {prodotto.availability.stock > 0 ? (
+                <Chip label="In stock" />
+              ) : (
+                <Chip label="Out of stock" />
+              )}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <Button variant="contained">
+                <Link to="/ecommerce">Torna indietro</Link>
+              </Button>
+            </Typography>
           </Card>
-        </Grid>
+        </Card>
       </Grid>
-    </React.Fragment>
+    </Grid>
   );
 }

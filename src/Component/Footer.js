@@ -1,13 +1,12 @@
 import * as React from "react";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
+import { Box } from "@mui/system";
 
 export default function Footer() {
   return (
-    <Box container sx={{ flexGrow: 1, bgcolor: "GREY", py: 2, mt: 2 }}>
-      <Grid item xs={0}></Grid>
+    <Box sx={{ bgcolor: "LIGHTGREY", p: 2}}>
       <Grid container direction="row-reverse" item xs={12}>
         <ButtonGroup variant="text" aria-label="outlined primary button group">
           <a href="https://www.twitter.com">
