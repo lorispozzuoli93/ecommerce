@@ -6,13 +6,18 @@ import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import { CardActionArea } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import { useHistory } from "react-router-dom";
 
 export default function Prodotto(props) {
   const { prodotto } = props;
+  var history = useHistory();
+
   return (
     <Grid item xs={12} sm={6} md={3}>
       <Card key={prodotto.UPC}>
-        <CardActionArea href={`/prodotto/${prodotto.UPC}`}>
+        <CardActionArea
+          onClick={() => history.push(`/prodotto/${prodotto.UPC}`)}
+        >
           <CardMedia
             component="img"
             image="https://via.placeholder.com/350"
