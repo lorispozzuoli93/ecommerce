@@ -23,20 +23,20 @@ export default function DettaglioProdotto(props) {
             alt={prodotto.name}
           />
           <Card>
-            <Typography gutterBottom variant="h4" component="div">
+            <Typography variant="h5" component="div">
               {prodotto.name}
             </Typography>
-            <Typography variant="h5" color="text.secondary">
+            <Typography sx={{ mb: 1.5 }} color="text.secondary">
               $ {prodotto.price.current.value}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography sx={{ mb: 1.5 }} color="text.secondary">
               {prodotto.availability.stock > 0 ? (
                 <Chip label="In stock" />
               ) : (
                 <Chip label="Out of stock" />
               )}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography sx={{ mb: 1.5 }}>
               <Button variant="contained">
                 <Link to="/ecommerce">Torna indietro</Link>
               </Button>
