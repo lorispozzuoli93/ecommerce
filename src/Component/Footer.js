@@ -6,8 +6,8 @@ import { Box } from "@mui/system";
 
 export default function Footer() {
   return (
-    <Box sx={{ bgcolor: "LIGHTGREY", p: 2}}>
-      <Grid container direction="row-reverse" item xs={12}>
+    <Box style={{backgroundColor: '#bdbdbd'}} sx={{  p: 2, mt: 2 }}>
+      <Grid container direction="row-reverse">
         <ButtonGroup variant="text" aria-label="outlined primary button group">
           <a href="https://www.twitter.com">
             <Button>TWITTER</Button>
