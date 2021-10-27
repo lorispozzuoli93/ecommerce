@@ -12,49 +12,38 @@ export default function Home() {
 
   const [searchQuery, setSearchQuery] = useState("");
 
-  const [toggle, setToggle] = useState("all");
+  const [toggle, setToggle] = useState("none");
 
   return (
     <React.Fragment>
       <CssBaseline />
       <Grid container direction="column" minHeight="100vh">
         <NavBar
-          search={(text) => {
-            setSearchQuery(text);
-          }}
-          toggle={(value) => {
-            setToggle(value);
-          }}
-          selected={toggle}
+          setToggle={setToggle}
+          toggle={toggle}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
         />
         <Grid container pl={2} pt={2} spacing={{ xs: 2, md: 2 }} flex={1}>
-          {prodotti &&
-            prodotti
-              .filter((prod) => {
-                switch (toggle) {
-                  case "all":
-                    return prod.name
-                      .toLowerCase()
-                      .includes(searchQuery.toLowerCase());
-                  case "in":
-                    return (
-                      prod.availability.stock > 0 &&
-                      prod.name
-                        .toLowerCase()
-                        .includes(searchQuery.toLowerCase())
-                    );
-                  default:
-                    return (
-                      prod.availability.stock <= 0 &&
-                      prod.name
-                        .toLowerCase()
-                        .includes(searchQuery.toLowerCase())
-                    );
-                }
-              })
-              .map((prodotto, index) => (
-                <Prodotto prodotto={prodotto} key={index} />
-              ))}
+          {prodotti
+            ?.filter((prod) => {
+              switch (toggle) {
+                case "in":
+                  return prod.availability.stock > 0;
+                case "out":
+                  return prod.availability.stock <= 0;
+                default:
+                  return true;
+              }
+            })
+            .filter((prod) => {
+              return prod.name
+                .toLowerCase()
+                .includes(searchQuery.toLowerCase());
+            })
+            .map((prodotto, index) => (
+              <Prodotto prodotto={prodotto} key={index} />
+            ))}
         </Grid>
         <Footer />
       </Grid>

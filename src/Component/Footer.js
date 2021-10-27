@@ -9,10 +9,10 @@ export default function Footer() {
     <Box style={{backgroundColor: '#bdbdbd'}} sx={{  p: 2, mt: 2 }}>
       <Grid container direction="row-reverse">
         <ButtonGroup variant="text" aria-label="outlined primary button group">
-          <a href="https://www.twitter.com">
+          <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
             <Button>TWITTER</Button>
           </a>
-          <a href="https://www.facebook.com">
+          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
             <Button>FACEBOOK</Button>
           </a>
         </ButtonGroup>

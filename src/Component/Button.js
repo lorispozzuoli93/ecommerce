@@ -8,20 +8,22 @@ export default function ContainedButtons(props) {
     <Box mt={3} ml={1}>
       <ButtonGroup>
         <Button
-          variant={props.selected == "all" ? "contained" : "outlined"}
-          onClick={() => props.toggle("all")}
-        >
-          ALL
-        </Button>
-        <Button
-          variant={props.selected == "in" ? "contained" : "outlined"}
-          onClick={() => props.toggle("in")}
+          variant={props.toggle === "in" ? "contained" : "outlined"}
+          onClick={() =>
+            props.toggle === "in"
+              ? props.setToggle("none")
+              : props.setToggle("in")
+          }
         >
           IN STOCK
         </Button>
         <Button
-          variant={props.selected == "out" ? "contained" : "outlined"}
-          onClick={() => props.toggle("out")}
+          variant={props.toggle === "out" ? "contained" : "outlined"}
+          onClick={() =>
+            props.toggle === "out"
+              ? props.setToggle("none")
+              : props.setToggle("out")
+          }
         >
           OUT OF STOCK
         </Button>

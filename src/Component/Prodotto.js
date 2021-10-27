@@ -4,14 +4,11 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
-import { CardActionArea } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default function Prodotto(props) {
   const { prodotto } = props;
-  // var history = useHistory();
 
   return (
     <Grid item xs={12} sm={6} md={3}>
@@ -20,9 +17,6 @@ export default function Prodotto(props) {
           to={`/prodotto/${prodotto.UPC}`}
           style={{ textDecoration: "none", color: "black" }}
         >
-          {/* <CardActionArea
-          onClick={() => history.push(`/prodotto/${prodotto.UPC}`)}
-        > */}
           <CardMedia
             component="img"
             image="https://via.placeholder.com/350"
@@ -43,7 +37,6 @@ export default function Prodotto(props) {
               )}
             </Typography>
           </CardContent>
-          {/* </CardActionArea> */}
         </Link>
       </Card>
     </Grid>

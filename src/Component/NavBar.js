@@ -6,8 +6,6 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 
 export default function NavBar(props) {
-  const [text, setText] = useState("");
-
   return (
     <Grid container borderBottom="solid 1px">
       <Grid item xs={12} sm={12} md={4} lg={4}>
@@ -19,10 +17,8 @@ export default function NavBar(props) {
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={4}>
         <ContainedButtons
-          toggle={(value) => {
-            props.toggle(value);
-          }}
-          selected={props.selected}
+          setToggle={props.setToggle}
+          toggle={props.toggle}
         />
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={4}>
@@ -30,17 +26,15 @@ export default function NavBar(props) {
           label={"Search"}
           sx={{ mt: 1, ml: 1, width: "65%" }}
           onChange={(e) => {
-            props.search(e.target.value);
-            setText(e.target.value);
+            props.setSearchQuery(e.target.value);
           }}
-          value={text}
+          value={props.searchQuery}
         ></TextField>
         <Button
           sx={{ mt: 2.3, ml: 2 }}
           variant="contained"
           onClick={() => {
-            props.search("");
-            setText("");
+            props.setSearchQuery("");
           }}
         >
           Reset
