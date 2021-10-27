@@ -4,10 +4,18 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
 import Prodotto from "./Prodotto.js";
 import NavBar from "./NavBar.js";
-import prodottiTot from "../Data.js";
-import Footer from "./Footer.js";
+import { Prodotti } from "../Data.jsx";
+import Footer from "./Footer.jsx";
 
-export default function Home() {
+type Props = {
+  prodottiTot: Prodotti[];
+  toggle: string;
+  setToggle: string;
+  searchQuery: string;
+  setSearchQuery: string;
+};
+
+const Home: React.FC<Props> = ({ prodottiTot }) => {
   const [prodotti, setProdotti] = useState(prodottiTot);
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -49,4 +57,6 @@ export default function Home() {
       </Grid>
     </React.Fragment>
   );
-}
+};
+
+export default Home;

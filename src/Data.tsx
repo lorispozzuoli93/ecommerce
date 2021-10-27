@@ -1,4 +1,20 @@
-const prodottiTot = [
+export type Prodotti = {
+  UPC: string;
+  name: string;
+  imageUrl?: string;
+  price: {
+    current: {
+      value: number;
+    };
+    currency: string;
+  };
+  availability: {
+    stock: number;
+  };
+  variants: any[];
+};
+
+export const prodottiTot: Prodotti[] = [
   {
     UPC: "1",
     name: "Turbine™ Rotor",
@@ -418,5 +434,3 @@ const prodottiTot = [
     ],
   },
 ];
-
-export default prodottiTot;

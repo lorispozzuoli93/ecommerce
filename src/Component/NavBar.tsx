@@ -1,11 +1,17 @@
 import * as React from "react";
-import { useState } from "react";
 import ContainedButtons from "./Button";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 
-export default function NavBar(props) {
+type Props = {
+  toggle: any;
+  setToggle: any;
+  searchQuery: any;
+  setSearchQuery: any;
+};
+
+const NavBar: React.FC<Props> = ({ toggle, setToggle, searchQuery,  setSearchQuery }) => {
   return (
     <Grid container borderBottom="solid 1px">
       <Grid item xs={12} sm={12} md={4} lg={4}>
@@ -16,25 +22,22 @@ export default function NavBar(props) {
         />
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={4}>
-        <ContainedButtons
-          setToggle={props.setToggle}
-          toggle={props.toggle}
-        />
+        <ContainedButtons setToggle={setToggle} toggle={toggle} />
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={4}>
         <TextField
           label={"Search"}
           sx={{ mt: 1, ml: 1, width: "65%" }}
           onChange={(e) => {
-            props.setSearchQuery(e.target.value);
+            setSearchQuery(e.target.value);
           }}
-          value={props.searchQuery}
+          value={searchQuery}
         ></TextField>
         <Button
           sx={{ mt: 2.3, ml: 2 }}
           variant="contained"
           onClick={() => {
-            props.setSearchQuery("");
+            setSearchQuery("");
           }}
         >
           Reset
@@ -42,4 +45,6 @@ export default function NavBar(props) {
       </Grid>
     </Grid>
   );
-}
+};
+
+export default NavBar;

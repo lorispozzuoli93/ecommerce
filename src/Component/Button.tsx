@@ -3,26 +3,27 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Box from "@mui/material/Box";
 
-export default function ContainedButtons(props) {
+type Props = {
+  toggle: any;
+  setToggle: any;
+};
+
+const ContainedButtons: React.FC<Props> = ({ toggle, setToggle }) => {
   return (
     <Box mt={3} ml={1}>
       <ButtonGroup>
         <Button
-          variant={props.toggle === "in" ? "contained" : "outlined"}
+          variant={toggle === "in" ? "contained" : "outlined"}
           onClick={() =>
-            props.toggle === "in"
-              ? props.setToggle("none")
-              : props.setToggle("in")
+            toggle === "in" ? setToggle("none") : setToggle("in")
           }
         >
           IN STOCK
         </Button>
         <Button
-          variant={props.toggle === "out" ? "contained" : "outlined"}
+          variant={toggle === "out" ? "contained" : "outlined"}
           onClick={() =>
-            props.toggle === "out"
-              ? props.setToggle("none")
-              : props.setToggle("out")
+            toggle === "out" ? setToggle("none") : setToggle("out")
           }
         >
           OUT OF STOCK
@@ -30,4 +31,6 @@ export default function ContainedButtons(props) {
       </ButtonGroup>
     </Box>
   );
-}
+};
+
+export default ContainedButtons;
