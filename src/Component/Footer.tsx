@@ -4,9 +4,9 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import { Box } from "@mui/system";
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
-    <Box style={{backgroundColor: '#bdbdbd'}} sx={{  p: 2, mt: 2 }}>
+    <Box style={{ backgroundColor: "#bdbdbd" }} sx={{ p: 2, mt: 2 }}>
       <Grid container direction="row-reverse">
         <ButtonGroup variant="text" aria-label="outlined primary button group">
           <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
@@ -19,4 +19,6 @@ export default function Footer() {
       </Grid>
     </Box>
   );
-}
+};
+
+export default Footer;

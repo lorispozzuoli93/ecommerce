@@ -9,13 +9,9 @@ import Footer from "./Footer.jsx";
 
 type Props = {
   prodottiTot: Prodotti[];
-  toggle: string;
-  setToggle: string;
-  searchQuery: string;
-  setSearchQuery: string;
 };
 
-const Home: React.FC<Props> = ({ prodottiTot }) => {
+const Home: React.FC<Props> = ({ prodottiTot}) => {
   const [prodotti, setProdotti] = useState(prodottiTot);
 
   const [searchQuery, setSearchQuery] = useState("");
