@@ -7,13 +7,12 @@ import NavBar from "./NavBar";
 import { prodottiTot } from "../Data";
 import Footer from "./Footer";
 
-
 const Home: React.FC = () => {
   const [prodotti, setProdotti] = useState(prodottiTot);
 
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const [toggle, setToggle] = useState("none");
+  const [toggle, setToggle] = useState<string>("none");
 
   return (
     <React.Fragment>

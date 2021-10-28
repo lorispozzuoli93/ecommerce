@@ -5,13 +5,18 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 
 type Props = {
-  toggle: any;
-  setToggle: any;
-  searchQuery: any;
-  setSearchQuery: any;
+  toggle: string;
+  setToggle: (toggle: string) => void;
+  searchQuery: string;
+  setSearchQuery: (searchQuery: string) => void;
 };
 
-const NavBar: React.FC<Props> = ({ toggle, setToggle, searchQuery,  setSearchQuery }) => {
+const NavBar: React.FC<Props> = ({
+  toggle,
+  setToggle,
+  searchQuery,
+  setSearchQuery,
+}) => {
   return (
     <Grid container borderBottom="solid 1px">
       <Grid item xs={12} sm={12} md={4} lg={4}>

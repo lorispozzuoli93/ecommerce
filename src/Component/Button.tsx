@@ -4,8 +4,8 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import Box from "@mui/material/Box";
 
 type Props = {
-  toggle: any;
-  setToggle: any;
+  toggle: string;
+  setToggle: (toggle: string) => void;
 };
 
 const ContainedButtons: React.FC<Props> = ({ toggle, setToggle }) => {
