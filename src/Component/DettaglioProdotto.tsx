@@ -1,15 +1,12 @@
 import React from "react";
-import { Prodotti } from "../Data";
 import Prodotto from "./Prodotto";
 import { useParams } from "react-router-dom";
+import { prodottiTot } from "../Data";
 
-type Props = {
-  prodotti: Prodotti[];
-};
 
-const DettaglioProdotto: React.FC<Props> = ({ prodotti }) => {
+const DettaglioProdotto: React.FC = () => {
   const { UPC } = useParams<{ UPC: string }>();
-  const prodotto = prodotti.find((prodotto) => prodotto.UPC === UPC);
+  const prodotto = prodottiTot.find((prodotto) => prodotto.UPC === UPC);
   return prodotto ? <Prodotto prodotto={prodotto} /> : null;
 };
 

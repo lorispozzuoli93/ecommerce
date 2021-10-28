@@ -2,16 +2,13 @@ import * as React from "react";
 import { useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
-import Prodotto from "./Prodotto.js";
-import NavBar from "./NavBar.js";
-import { Prodotti } from "../Data.jsx";
-import Footer from "./Footer.jsx";
+import Prodotto from "./Prodotto";
+import NavBar from "./NavBar";
+import { prodottiTot } from "../Data";
+import Footer from "./Footer";
 
-type Props = {
-  prodottiTot: Prodotti[];
-};
 
-const Home: React.FC<Props> = ({ prodottiTot}) => {
+const Home: React.FC = () => {
   const [prodotti, setProdotti] = useState(prodottiTot);
 
   const [searchQuery, setSearchQuery] = useState("");
