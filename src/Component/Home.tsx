@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useState } from "react";
-import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
 import Prodotto from "./Prodotto";
 import NavBar from "./NavBar";
@@ -15,8 +14,6 @@ const Home: React.FC = () => {
   const [toggle, setToggle] = useState<string>("none");
 
   return (
-    <React.Fragment>
-      <CssBaseline />
       <Grid container direction="column" minHeight="100vh">
         <NavBar
           setToggle={setToggle}
@@ -47,7 +44,6 @@ const Home: React.FC = () => {
         </Grid>
         <Footer />
       </Grid>
-    </React.Fragment>
   );
 };
 
