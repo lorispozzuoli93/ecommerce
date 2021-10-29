@@ -11,7 +11,7 @@ export type Prodotti = {
   availability: {
     stock: number;
   };
-  variants: any;
+  variants: Omit<Prodotti, "variants">[];
 };
 
 export const prodottiTot: Prodotti[] = [
