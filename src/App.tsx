@@ -6,7 +6,7 @@ import DettaglioProdotto from "./Component/DettaglioProdotto";
 function App() {
   return (
     <Switch>
-      <Route path="/prodotto/:UPC" component={DettaglioProdotto}></Route>
+      <Route path="/product/:UPC" component={DettaglioProdotto}></Route>
       <Route path="/" component={Home}></Route>
     </Switch>
   );

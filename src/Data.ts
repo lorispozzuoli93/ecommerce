@@ -1,4 +1,4 @@
-export type Prodotti = {
+export type Products = {
   UPC: string;
   name: string;
   imageUrl?: string;
@@ -11,10 +11,10 @@ export type Prodotti = {
   availability: {
     stock: number;
   };
-  variants: Omit<Prodotti, "variants">[];
+  variants: Omit<Products, "variants">[];
 };
 
-export const prodottiTot: Prodotti[] = [
+export const allProducts: Products[] = [
   {
     UPC: "1",
     name: "Turbine™ Rotor",
