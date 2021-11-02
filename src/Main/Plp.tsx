@@ -3,7 +3,7 @@ import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import Product from "../Component/Product";
 import NavBar from "../Component/NavBar";
-import { allProducts } from "../Model/Data";
+import { allProducts } from "../Data/Data";
 import Footer from "../Component/Footer";
 
 const Plp: React.FC = () => {
@@ -16,8 +16,8 @@ const Plp: React.FC = () => {
   return (
     <Grid container direction="column" minHeight="100vh">
       <NavBar
-        setToggle={setToggle}
         toggle={toggle}
+        setToggle={setToggle}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />

@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
-import { Products } from "../Model/Data";
+import { Products } from "../Data/Data";
 
 type Props = {
   product: Products;

@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
-import Plp from "./Pages/Plp";
-import Pdp from "./Pages/Pdp";
+import Plp from "./Main/Plp";
+import Pdp from "./Main/Pdp";
 
 function App() {
   return (
