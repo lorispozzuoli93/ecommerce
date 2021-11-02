@@ -6,13 +6,13 @@ import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
-import { Products} from "../Data";
+import { Products} from "../Model/Data";
 
 type Props = {
   product: Products;
 };
 
-const Prodotto: React.FC<Props> = ({ product }) => {
+const Product: React.FC<Props> = ({ product }) => {
   return (
     <Grid item xs={12} sm={6} md={3}>
       <Card key={product.UPC}>
@@ -46,4 +46,4 @@ const Prodotto: React.FC<Props> = ({ product }) => {
   );
 };
 
-export default Prodotto;
+export default Product;

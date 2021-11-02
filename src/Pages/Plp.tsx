@@ -1,12 +1,12 @@
 import * as React from "react";
 import { useState } from "react";
 import Grid from "@mui/material/Grid";
-import Prodotto from "./Prodotto";
-import NavBar from "./NavBar";
-import { allProducts } from "../Data";
-import Footer from "./Footer";
+import Prodotto from "../Component/Product";
+import NavBar from "../Component/NavBar";
+import { allProducts } from "../Model/Data";
+import Footer from "../Component/Footer";
 
-const Home: React.FC = () => {
+const Plp: React.FC = () => {
   const [products, setProducts] = useState(allProducts);
 
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -47,4 +47,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Plp;
