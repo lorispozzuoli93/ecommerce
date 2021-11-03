@@ -1,7 +1,5 @@
 import * as React from "react";
-// import Button from "@mui/material/Button";
-import ButtonGroup from "@mui/material/ButtonGroup";
-import Box from "@mui/material/Box";
+import "../App.css";
 import styled from "styled-components";
 
 type Props = {
@@ -9,81 +7,56 @@ type Props = {
   setToggle: (toggle: string) => void;
 };
 
-const Button = styled.button`
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  position: relative;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
+const Box = styled.div`
+  margin-top: 20px;
+  margin-left: 8px;
+`;
+
+const ButtonLeft = styled.button`
+  color: #1976d2;
   background-color: transparent;
-  outline: 0;
-  border: 0;
-  margin: 0;
-  border-radius: 0;
-  padding: 0;
+  min-width: 64px;
+  padding: 6px 16px;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  vertical-align: middle;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: inherit;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  border: 1px solid rgba(25, 118, 210, 0.5);
+  border-radius: 5px 0 0 5px;
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.75;
-  letter-spacing: 0.02857em;
-  text-transform: uppercase;
-  min-width: 64px;
-  padding: 5px 15px;
-  border-radius: 4px;
-  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  border: 1px solid rgba(25, 118, 210, 0.5);
+  box-shadow: 0px 1px #888888;
+`;
+
+const ButtonRight = styled.button`
   color: #1976d2;
+  background-color: transparent;
+  min-width: 64px;
+  padding: 6px 16px;
+  cursor: pointer;
+  border: 1px solid rgba(25, 118, 210, 0.5);
+  border-radius: 0 5px 5px 0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  box-shadow: 0px 1px #888888;
 `;
 
 const ContainedButtons: React.FC<Props> = ({ toggle, setToggle }) => {
   return (
-    <Box mt={3} ml={1}>
-      <ButtonGroup>
-        <Button
-        className={toggle === "in" ? "contained" : "outlined"}
-        onClick={() =>
-          toggle === "in" ? setToggle("none") : setToggle("in")
-        }
-        >
-          IN STOCK
-        </Button>
-        <Button
-        className={toggle === "out" ? "contained" : "outlined"}
+    <Box>
+      <ButtonLeft
+        className={toggle === "in" ? "bg-button" : ""}
+        onClick={() => (toggle === "in" ? setToggle("none") : setToggle("in"))}
+      >
+        IN STOCK
+      </ButtonLeft>
+      <ButtonRight
+        className={toggle === "out" ? "bg-button" : ""}
         onClick={() =>
           toggle === "out" ? setToggle("none") : setToggle("out")
         }
-        >
-          OUT OF STOCK
-        </Button>
-      </ButtonGroup>
+      >
+        OUT OF STOCK
+      </ButtonRight>
     </Box>
   );
 };
