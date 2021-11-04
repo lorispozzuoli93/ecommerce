@@ -17,10 +17,17 @@ const Card = styled.div`
 
 const CardMedia = styled.div`
   background-image: url("https://via.placeholder.com/350");
-  background-repeat: no-repeat;
   background-size: contain;
   height: 457px;
   width: 457px;
+  @media (max-width: 414px) {
+    height: 300px;
+    width: 300px;
+  }
+  @media (max-width: 280px) {
+    height: 250px;
+    width: 250px;
+  }
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 `;

@@ -50,10 +50,10 @@ const Footer: React.FC = () => {
   return (
     <Box>
       <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
-        <ButtonLeft>TWITTER</ButtonLeft>
+        <ButtonLeft>FACEBOOK</ButtonLeft>
       </a>
       <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-        <ButtonRight>FACEBOOK</ButtonRight>
+        <ButtonRight>TWITTER</ButtonRight>
       </a>
     </Box>
   );

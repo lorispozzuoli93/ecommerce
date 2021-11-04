@@ -13,6 +13,25 @@ type BgButton = {
 const Box = styled.div`
   margin-top: 20px;
   margin-left: 8px;
+  margin-right: 180px;
+  @media (min-width: 1280px) {
+    margin-left: 90px;
+  }
+  @media (min-width: 768px) {
+    margin-right: -20px;
+  }
+  @media (max-width: 540px) {
+    margin-right: 150px;
+    margin-left: 8px;
+  }
+  @media (max-width: 414px) {
+    margin-left: 8px;
+    margin-right: 50px;
+  }
+  @media (max-width: 280px) {
+    margin-left: 8px;
+    margin-right: 0px;
+  }
 `;
 
 const ButtonLeft = styled.button<BgButton>`
