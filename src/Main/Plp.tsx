@@ -39,7 +39,7 @@ const GridProduct = styled.div`
     padding-left: 10px;
   }
   @media (max-width: 280px) {
-    padding-left: 15px;
+    padding-left: 10px;
   }
   gap: 15px;
   flex: 1;

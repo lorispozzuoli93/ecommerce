@@ -21,15 +21,12 @@ const Box = styled.div`
     margin-right: -20px;
   }
   @media (max-width: 540px) {
-    margin-right: 150px;
-    margin-left: 8px;
+    margin-right: 50px;
   }
   @media (max-width: 414px) {
-    margin-left: 8px;
     margin-right: 50px;
   }
   @media (max-width: 280px) {
-    margin-left: 8px;
     margin-right: 0px;
   }
 `;
@@ -48,6 +45,7 @@ const ButtonLeft = styled.button<BgButton>`
   line-height: 1.75;
   letter-spacing: 0.02857em;
   box-shadow: 0px 1.5px #888888;
+  transition: 250ms;
 `;
 
 const ButtonRight = styled.button<BgButton>`
@@ -64,6 +62,7 @@ const ButtonRight = styled.button<BgButton>`
   line-height: 1.75;
   letter-spacing: 0.02857em;
   box-shadow: 0px 1.5px #888888;
+  transition: 250ms;
 `;
 
 const ContainedButtons: React.FC<Props> = ({ toggle, setToggle }) => {

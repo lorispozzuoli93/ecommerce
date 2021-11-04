@@ -23,9 +23,18 @@ const TextField = styled.input`
   @media (min-width: 1280px) {
     width: 380px;
   }
+  @media (max-width: 540px) {
+    width: 380px;
+  }
+  @media (max-width: 414px) {
+    width: 200px;
+  }
+  @media (max-width: 320px) {
+    width: 100px;
+  }
 `;
 
-const Button = styled.button`
+const ButtonReset = styled.button`
   margin-left: 10px;
   background-color: rgb(25, 118, 210);
   color: rgb(255, 255, 255);
@@ -40,10 +49,6 @@ const Button = styled.button`
   border: none;
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
     rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
-  @media (max-width: 320px) {
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
 `;
 
 const Search: React.FC<Props> = ({ searchQuery, setSearchQuery }) => {
@@ -56,13 +61,13 @@ const Search: React.FC<Props> = ({ searchQuery, setSearchQuery }) => {
         }}
         value={searchQuery}
       ></TextField>
-      <Button
+      <ButtonReset
         onClick={() => {
           setSearchQuery("");
         }}
       >
         RESET
-      </Button>
+      </ButtonReset>
     </Grid>
   );
 };
