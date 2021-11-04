@@ -6,8 +6,11 @@ type Props = {
   setSearchQuery: (searchQuery: string) => void;
 };
 
+const Grid = styled.div`
+  margin-right: 7%
+`;
+
 const TextField = styled.input`
-  width: 60%;
   padding: 17px;
   margin-top: 8px;
   font-size: 16px;
@@ -35,7 +38,7 @@ const Button = styled.button`
 
 const Search: React.FC<Props> = ({ searchQuery, setSearchQuery }) => {
   return (
-    <div>
+    <Grid>
       <TextField
         placeholder="Search"
         onChange={(e) => {
@@ -50,27 +53,8 @@ const Search: React.FC<Props> = ({ searchQuery, setSearchQuery }) => {
       >
         RESET
       </Button>
-    </div>
+    </Grid>
   );
 };
 
 export default Search;
-
-// font: inherit;
-//   letter-spacing: inherit;
-//   color: currentColor;
-//   padding: 4 px 0 5 px;
-//   border: 0;
-//   box-sizing: content-box;
-//   background: none;
-//   height: 1.4375 em;
-//   margin: 0;
-//   -webkit-tap-highlight-color: transparent;
-//   display: block;
-//   min-width: 0;
-//   width: 100%;
-//   -webkit-animation-name: mui-auto-fill-cancel;
-//   animation-name: mui-auto-fill-cancel;
-//   -webkit-animation-duration: 10ms;
-//   animation-duration: 10ms;
-//   padding: 16.5 px 14 px;

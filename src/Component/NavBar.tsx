@@ -1,6 +1,6 @@
 import * as React from "react";
+import styled from "styled-components";
 import ContainedButtons from "./Button";
-import Grid from "@mui/material/Grid";
 import Search from "../Component/Search";
 
 type Props = {
@@ -10,6 +10,14 @@ type Props = {
   setSearchQuery: (searchQuery: string) => void;
 };
 
+const Grid = styled.div`
+  width: 100%;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
 const NavBar: React.FC<Props> = ({
   toggle,
   setToggle,
@@ -17,20 +25,14 @@ const NavBar: React.FC<Props> = ({
   setSearchQuery,
 }) => {
   return (
-    <Grid container borderBottom="solid 1px">
-      <Grid item xs={12} sm={12} md={4} lg={4}>
-        <img
-          style={{ display: "block" }}
-          src="https://via.placeholder.com/150x80"
-          alt="logo"
-        />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={4}>
-        <ContainedButtons toggle={toggle} setToggle={setToggle} />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={4}>
-        <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      </Grid>
+    <Grid>
+      <img
+        style={{ display: "block" }}
+        src="https://via.placeholder.com/150x80"
+        alt="logo"
+      />
+      <ContainedButtons toggle={toggle} setToggle={setToggle} />
+      <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
     </Grid>
   );
 };

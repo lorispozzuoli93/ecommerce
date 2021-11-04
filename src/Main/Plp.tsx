@@ -1,10 +1,24 @@
 import * as React from "react";
+import styled from "styled-components";
 import { useState } from "react";
-import Grid from "@mui/material/Grid";
 import Product from "../Component/Product";
 import NavBar from "../Component/NavBar";
 import { allProducts } from "../Data/Data";
 import Footer from "../Component/Footer";
+
+const Grid = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+const GridProduct = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  gap: 15px;
+  flex: 1;
+`;
 
 const Plp: React.FC = () => {
   const [products, setProducts] = useState(allProducts);
@@ -14,14 +28,14 @@ const Plp: React.FC = () => {
   const [toggle, setToggle] = useState<string>("none");
 
   return (
-    <Grid container direction="column" minHeight="100vh">
+    <Grid>
       <NavBar
         toggle={toggle}
         setToggle={setToggle}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
-      <Grid container pl={2} pt={2} spacing={{ xs: 2, md: 2 }} flex={1}>
+      <GridProduct>
         {products
           ?.filter((prod) => {
             switch (toggle) {
@@ -39,7 +53,7 @@ const Plp: React.FC = () => {
           .map((product, index) => (
             <Product product={product} key={index} />
           ))}
-      </Grid>
+      </GridProduct>
       <Footer />
     </Grid>
   );

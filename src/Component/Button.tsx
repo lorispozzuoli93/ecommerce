@@ -23,6 +23,7 @@ const ButtonLeft = styled.button`
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.75;
+  letter-spacing: 0.02857em;
   box-shadow: 0px 1.5px #888888;
 `;
 
@@ -37,6 +38,7 @@ const ButtonRight = styled.button`
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.75;
+  letter-spacing: 0.02857em;
   box-shadow: 0px 1.5px #888888;
 `;
 
