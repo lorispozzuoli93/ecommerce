@@ -50,7 +50,7 @@ const Search: React.FC<Props> = ({ searchQuery, setSearchQuery }) => {
   return (
     <Grid>
       <TextField
-        placeholder="Search"
+        placeholder="search"
         onChange={(e) => {
           setSearchQuery(e.target.value);
         }}

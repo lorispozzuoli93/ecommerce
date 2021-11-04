@@ -20,7 +20,19 @@ const CardMedia = styled.div`
   background-size: contain;
   height: 457px;
   width: 457px;
-  @media (max-width: 414px) {
+  @media (max-width: 1280px) {
+    height: 350px;
+    width: 350px;
+  }
+  @media (max-width: 1024px) {
+    height: 300px;
+    width: 300px;
+  }
+  @media (max-width: 768px) {
+    height: 350px;
+    width: 350px;
+  }
+  @media (max-width: 320px) {
     height: 300px;
     width: 300px;
   }

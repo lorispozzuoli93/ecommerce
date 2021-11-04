@@ -15,7 +15,32 @@ const Grid = styled.div`
 const GridProduct = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding: 15px;
+  padding-top: 15px;
+  padding-left: 15px;
+  @media (max-width: 1280px) {
+    padding-left: 100px;
+  }
+  @media (max-width: 1024px) {
+    padding-left: 45px;
+  }
+  @media (max-width: 768px) {
+    padding-left: 25px;
+  }
+  @media (max-width: 540px) {
+    padding-left: 90px;
+  }
+  @media (max-width: 414px) {
+    padding-left: 32px;
+  }
+  @media (max-width: 375px) {
+    padding-left: 13px;
+  }
+  @media (max-width: 320px) {
+    padding-left: 10px;
+  }
+  @media (max-width: 280px) {
+    padding-left: 15px;
+  }
   gap: 15px;
   flex: 1;
 `;
