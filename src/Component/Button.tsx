@@ -1,5 +1,4 @@
 import * as React from "react";
-import "../App.css";
 import styled from "styled-components";
 
 type Props = {
@@ -7,14 +6,19 @@ type Props = {
   setToggle: (toggle: string) => void;
 };
 
+type BgButton = {
+  activeButton: boolean;
+};
+
 const Box = styled.div`
   margin-top: 20px;
   margin-left: 8px;
 `;
 
-const ButtonLeft = styled.button`
-  color: #1976d2;
-  background-color: transparent;
+const ButtonLeft = styled.button<BgButton>`
+  color: ${(props) => (props.activeButton ? "#fff" : "#1976d2")};
+  background-color: ${(props) =>
+    props.activeButton ? "#1976d2" : "transparent"};
   min-width: 64px;
   padding: 6px 16px;
   cursor: pointer;
@@ -27,9 +31,10 @@ const ButtonLeft = styled.button`
   box-shadow: 0px 1.5px #888888;
 `;
 
-const ButtonRight = styled.button`
-  color: #1976d2;
-  background-color: transparent;
+const ButtonRight = styled.button<BgButton>`
+  color: ${(props) => (props.activeButton ? "#fff" : "#1976d2")};
+  background-color: ${(props) =>
+    props.activeButton ? "#1976d2" : "transparent"};
   min-width: 64px;
   padding: 6px 16px;
   cursor: pointer;
@@ -46,13 +51,13 @@ const ContainedButtons: React.FC<Props> = ({ toggle, setToggle }) => {
   return (
     <Box>
       <ButtonLeft
-        className={toggle === "in" ? "bg-button" : ""}
+        activeButton={toggle === "in"}
         onClick={() => (toggle === "in" ? setToggle("none") : setToggle("in"))}
       >
         IN STOCK
       </ButtonLeft>
       <ButtonRight
-        className={toggle === "out" ? "bg-button" : ""}
+        activeButton={toggle === "out"}
         onClick={() =>
           toggle === "out" ? setToggle("none") : setToggle("out")
         }

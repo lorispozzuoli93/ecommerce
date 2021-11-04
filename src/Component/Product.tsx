@@ -58,7 +58,6 @@ const Chip = styled.span`
   background-color: rgba(0, 0, 0, 0.08);
   border-radius: 16px;
   padding: 7px 10px;
-  
 `;
 
 const Product: React.FC<Props> = ({ product }) => {
@@ -68,7 +67,7 @@ const Product: React.FC<Props> = ({ product }) => {
         to={`/product/${product.UPC}`}
         style={{ textDecoration: "none", color: "black" }}
       >
-        <CardMedia />
+        <CardMedia className="img-responsive" />
         <CardContent>
           <Typography>{product.name}</Typography>
           <TypographyPrice>$ {product.price.current.value}</TypographyPrice>
