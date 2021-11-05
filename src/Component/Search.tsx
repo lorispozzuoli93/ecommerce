@@ -18,8 +18,15 @@ const TextField = styled.input`
   margin-top: 8px;
   font-size: 16px;
   letter-spacing: inherit;
-  color: currentColor;
+  border-radius: 4px;
   margin-left: 8px;
+  border: 1px solid lightgrey;
+  &:hover {
+    border: 1px solid black;
+  }
+  &:focus {
+    border: 1px solid #1976d2 !important;
+  }
   @media (min-width: 1280px) {
     width: 380px;
   }
@@ -36,10 +43,18 @@ const TextField = styled.input`
 
 const ButtonReset = styled.button`
   margin-left: 10px;
-  background-color: #1976d2;
+  background: #1976d2;
+  transition: background 0.5s;
+  &:hover {
+    background: #3d91d6;
+    transition: background 0s;
+    box-shadow: rgb(0 0 0 / 80%) 0px 3px 1px -2px;
+  }
   &:active {
-    background-color: #fff;
-    transition: 500ms;
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%)
+      center/15000%;
+    background-size: 100%;
+    transition: background 0s;
   }
   color: #fff;
   min-width: 64px;
