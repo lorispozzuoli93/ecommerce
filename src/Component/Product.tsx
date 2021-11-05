@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { Products } from "../Data/Data";
 
 type Props = {
@@ -14,6 +13,11 @@ const Card = styled.div`
   border-radius: 4px;
   box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
     rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+`;
+
+const Link = styled.a`
+  text-decoration: none;
+  color: black;
 `;
 
 const CardMedia = styled.img`
@@ -60,10 +64,7 @@ const Chip = styled.span`
 const Product: React.FC<Props> = ({ product }) => {
   return (
     <Card key={product.UPC}>
-      <Link
-        to={`/product/${product.UPC}`}
-        style={{ textDecoration: "none", color: "black" }}
-      >
+      <Link href={`/product/${product.UPC}`}>
         <CardMedia src="https://via.placeholder.com/350" />
         <CardContent>
           <Typography>{product.name}</Typography>
