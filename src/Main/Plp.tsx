@@ -13,33 +13,33 @@ const Grid = styled.div`
 `;
 
 const GridProduct = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  @media (max-width: 1280px) {
+    grid-template-columns: 24% 24% 24% 24%;
+  }
+  @media (max-width: 1024px) {
+    grid-template-columns: 45% 45%;
+  }
+  @media (max-width: 414px) {
+    grid-template-columns: 98%;
+  }
   padding-top: 15px;
   padding-left: 15px;
   @media (max-width: 1280px) {
-    padding-left: 100px;
+    padding-left: 5px;
   }
   @media (max-width: 1024px) {
-    padding-left: 45px;
+    padding-left: 55px;
   }
   @media (max-width: 768px) {
-    padding-left: 25px;
+    padding-left: 40px;
   }
   @media (max-width: 540px) {
-    padding-left: 90px;
+    padding-left: 25px;
   }
   @media (max-width: 414px) {
-    padding-left: 32px;
-  }
-  @media (max-width: 375px) {
-    padding-left: 13px;
-  }
-  @media (max-width: 320px) {
-    padding-left: 10px;
-  }
-  @media (max-width: 280px) {
-    padding-left: 10px;
+    padding-left: 7px;
   }
   gap: 15px;
   flex: 1;

@@ -8,6 +8,7 @@ type Props = {
 };
 
 const Card = styled.div`
+  height: auto;
   background-color: rgb(255, 255, 255);
   color: rgba(0, 0, 0, 0.87);
   border-radius: 4px;
@@ -15,31 +16,8 @@ const Card = styled.div`
     rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
 `;
 
-const CardMedia = styled.div`
-  background-image: url("https://via.placeholder.com/350");
-  background-size: contain;
-  height: 457px;
-  width: 457px;
-  @media (max-width: 1280px) {
-    height: 350px;
-    width: 350px;
-  }
-  @media (max-width: 1024px) {
-    height: 300px;
-    width: 300px;
-  }
-  @media (max-width: 768px) {
-    height: 350px;
-    width: 350px;
-  }
-  @media (max-width: 320px) {
-    height: 300px;
-    width: 300px;
-  }
-  @media (max-width: 280px) {
-    height: 250px;
-    width: 250px;
-  }
+const CardMedia = styled.img`
+  width: 100%;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 `;
@@ -86,7 +64,7 @@ const Product: React.FC<Props> = ({ product }) => {
         to={`/product/${product.UPC}`}
         style={{ textDecoration: "none", color: "black" }}
       >
-        <CardMedia className="img-responsive" />
+        <CardMedia src="https://via.placeholder.com/350" />
         <CardContent>
           <Typography>{product.name}</Typography>
           <TypographyPrice>$ {product.price.current.value}</TypographyPrice>

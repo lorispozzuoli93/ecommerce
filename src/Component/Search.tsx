@@ -6,6 +6,10 @@ type Props = {
   setSearchQuery: (searchQuery: string) => void;
 };
 
+type Button = {
+  active: any;
+};
+
 const Grid = styled.div`
   margin-right: 1px;
   @media (min-width: 1280px) {
@@ -34,10 +38,10 @@ const TextField = styled.input`
   }
 `;
 
-const ButtonReset = styled.button`
+const ButtonReset = styled.button<Button>`
   margin-left: 10px;
-  background-color: rgb(25, 118, 210);
-  color: rgb(255, 255, 255);
+  background: ${props => props.active ? "rgb(25, 118, 210)" : "white"};
+  color: ${props => props.active ? "white" : "rgb(255, 255, 255)"};
   min-width: 64px;
   padding: 6px 16px;
   border-radius: 4px;
@@ -61,7 +65,7 @@ const Search: React.FC<Props> = ({ searchQuery, setSearchQuery }) => {
         }}
         value={searchQuery}
       ></TextField>
-      <ButtonReset
+      <ButtonReset active
         onClick={() => {
           setSearchQuery("");
         }}
