@@ -46,6 +46,20 @@ const ButtonLeft = styled.button<BgButton>`
   letter-spacing: 0.02857em;
   box-shadow: 0px 1.5px #888888;
   transition: 250ms;
+  span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
 `;
 
 const ButtonRight = styled.button<BgButton>`

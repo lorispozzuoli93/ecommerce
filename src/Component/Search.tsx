@@ -6,8 +6,8 @@ type Props = {
   setSearchQuery: (searchQuery: string) => void;
 };
 
-type Button = {
-  primary: any;
+type AnimationButton = {
+  colorBg: boolean;
 };
 
 const Grid = styled.div`
@@ -18,21 +18,17 @@ const Grid = styled.div`
 `;
 
 const TextField = styled.input`
-  padding: 17px;
-  margin-top: 8px;
-  font-size: 16px;
-  letter-spacing: inherit;
-  border-radius: 4px;
-  margin-left: 8px;
-  border: 1px solid lightgrey;
-  &:hover {
-    border: 1px solid black;
-  }
+  font-size: 17px;
+  padding: 10px;
+  height: 30px;
+  border: 1px solid rgb(100, 100, 100, 0.5);
+  border-radius: 3px;
   &:focus {
-    border: 1px solid #1976d2;
+    outline: none;
+    border: 2px solid #1976d2;
   }
   @media (min-width: 1280px) {
-    width: 380px;
+    width: 350px;
   }
   @media (max-width: 540px) {
     width: 380px;
@@ -45,10 +41,48 @@ const TextField = styled.input`
   }
 `;
 
-const ButtonReset = styled.button<Button>`
+const Label = styled.label`
+  color: gray;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 13px;
+  top: 13px;
+  transition: 0.2s ease all;
+  ${TextField}:focus ~ & {
+    top: -10px;
+    font-size: 13px;
+    color: #1976d2;
+    background-color: white;
+    width: 40px;
+    padding-left: 5px;
+  }
+  &.up {
+    top: -10px;
+    font-size: 13px;
+    color: #1976d2;
+    background-color: white;
+    width: 40px;
+    padding-left: 5px;
+  }
+`;
+const SearchBarWrapper = styled.div`
+  position: relative;
+  margin-top: 10px;
   margin-left: 10px;
-  background: ${(props) => (props.primary ? "#1976d2" : "white")};
-  color: ${(props) => (props.primary ? "white" : "#1976d2")};
+  display: flex;
+`;
+
+const ButtonReset = styled.button<AnimationButton>`
+  margin-left: 10px;
+  height: 35px;
+  margin-top: 7px;
+  background: ${(props) => (props.colorBg ? "#1976d2" : "white")};
+  color: ${(props) => (props.colorBg ? "white" : "#1976d2")};
+  /* ripple effect */
+  background-position: center;
+  transition: background 0.5s;
   min-width: 64px;
   padding: 6px 16px;
   border-radius: 4px;
@@ -60,9 +94,6 @@ const ButtonReset = styled.button<Button>`
   border: none;
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
     rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
-  /* ripple effect */
-  background-position: center;
-  transition: background 0.5s;
   &:hover {
     background: rgb(21, 101, 192)
       radial-gradient(circle, transparent 1%, rgb(21, 101, 192) 1%)
@@ -77,24 +108,28 @@ const ButtonReset = styled.button<Button>`
   }
 `;
 
+const SearchBox: React.FC<Props> = ({ searchQuery, setSearchQuery }) => (
+  <SearchBarWrapper>
+    <TextField
+      onChange={(e) => setSearchQuery(e.target.value)}
+      value={searchQuery}
+    />
+    <Label className={searchQuery === "" ? "" : "up"}>search</Label>
+    <ButtonReset
+      colorBg
+      onClick={() => {
+        setSearchQuery("");
+      }}
+    >
+      RESET
+    </ButtonReset>
+  </SearchBarWrapper>
+);
+
 const Search: React.FC<Props> = ({ searchQuery, setSearchQuery }) => {
   return (
     <Grid>
-      <TextField
-        placeholder="search"
-        onChange={(e) => {
-          setSearchQuery(e.target.value);
-        }}
-        value={searchQuery}
-      ></TextField>
-      <ButtonReset
-        primary
-        onClick={() => {
-          setSearchQuery("");
-        }}
-      >
-        RESET
-      </ButtonReset>
+      <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
     </Grid>
   );
 };
