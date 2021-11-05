@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import Ripple from "./Ripple";
 
 type Props = {
   searchQuery: string;
@@ -78,6 +79,7 @@ const ButtonReset = styled.button<AnimationButton>`
   margin-left: 10px;
   height: 35px;
   margin-top: 7px;
+  overflow: hidden;
   background: ${(props) => (props.colorBg ? "#1976d2" : "white")};
   color: ${(props) => (props.colorBg ? "white" : "#1976d2")};
   /* ripple effect */
