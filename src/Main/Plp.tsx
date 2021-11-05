@@ -14,7 +14,7 @@ const Grid = styled.div`
 
 const GridProduct = styled.div`
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 24.2% 24.2% 24.2% 24.2%;
   @media (max-width: 1280px) {
     grid-template-columns: 24% 24% 24% 24%;
   }
