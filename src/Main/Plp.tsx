@@ -14,7 +14,7 @@ const Grid = styled.div`
 
 const GridProduct = styled.div`
   display: grid;
-  grid-template-columns: 24.2% 24.2% 24.2% 24.2%;
+  grid-template-columns: 24.15% 24.15% 24.15% 24.15%;
   @media (max-width: 1280px) {
     grid-template-columns: 24% 24% 24% 24%;
   }
@@ -24,8 +24,8 @@ const GridProduct = styled.div`
   @media (max-width: 414px) {
     grid-template-columns: 98%;
   }
-  padding-top: 15px;
-  padding-left: 15px;
+  padding-top: 16px;
+  padding-left: 16px;
   @media (max-width: 1280px) {
     padding-left: 5px;
   }
@@ -41,7 +41,7 @@ const GridProduct = styled.div`
   @media (max-width: 414px) {
     padding-left: 7px;
   }
-  gap: 15px;
+  gap: 16px;
   flex: 1;
 `;
 

@@ -14,14 +14,16 @@ type AnimationButton = {
 const Grid = styled.div`
   margin-right: 1px;
   @media (min-width: 1280px) {
-    margin-right: 120px;
+    margin-right: 115px;
   }
 `;
 
 const TextField = styled.input`
   font-size: 17px;
   padding: 10px;
-  height: 30px;
+  padding-left: 20px;
+  height: 34px;
+  margin-right: 16px;
   border: 1px solid rgb(100, 100, 100, 0.5);
   border-radius: 3px;
   &:focus {
@@ -29,7 +31,7 @@ const TextField = styled.input`
     border: 2px solid #1976d2;
   }
   @media (min-width: 1280px) {
-    width: 350px;
+    width: 380px;
   }
   @media (max-width: 540px) {
     width: 380px;
@@ -44,12 +46,13 @@ const TextField = styled.input`
 
 const Label = styled.label`
   color: gray;
-  font-size: 18px;
+  font-size: 17px;
+  letter-spacing: inherit;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
   left: 13px;
-  top: 13px;
+  top: 15px;
   transition: 0.2s ease all;
   ${TextField}:focus ~ & {
     top: -10px;
@@ -70,30 +73,29 @@ const Label = styled.label`
 `;
 const SearchBarWrapper = styled.div`
   position: relative;
-  margin-top: 10px;
+  margin-top: 8px;
   margin-left: 10px;
   display: flex;
 `;
 
 const ButtonReset = styled.button<AnimationButton>`
   position: relative;
-  margin-left: 10px;
-  height: 35px;
-  margin-top: 7px;
+  height: 36px;
+  margin-top: 10px;
   overflow: hidden;
   background: ${(props) => (props.colorBg ? "#1976d2" : "white")};
   color: ${(props) => (props.colorBg ? "white" : "#1976d2")};
   /* ripple effect */
   background-position: center;
   transition: background 0.5s;
-  min-width: 64px;
-  padding: 6px 16px;
-  border-radius: 4px;
-  cursor: pointer;
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.75;
   letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  min-width: 64px;
+  padding: 6px 16px;
+  border-radius: 4px;
   border: none;
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
     rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;

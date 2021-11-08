@@ -5,8 +5,8 @@ const Box = styled.div`
   background-color: #bdbdbd;
   display: flex;
   flex-direction: row-reverse;
-  padding: 17px;
-  margin-top: 15px;
+  padding: 16px;
+  margin-top: 16px;
 `;
 
 const ButtonLeft = styled.button`

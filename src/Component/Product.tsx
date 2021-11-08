@@ -33,7 +33,8 @@ const CardContent = styled.div`
 
 const Typography = styled.h5`
   margin: 0px;
-  padding-top: 16px;
+  padding-top: 12px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.334;
@@ -42,6 +43,7 @@ const Typography = styled.h5`
 
 const TypographyPrice = styled.p`
   margin: 0px 0px 12px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
@@ -50,15 +52,26 @@ const TypographyPrice = styled.p`
 `;
 
 const TypographyStock = styled.p`
-  padding-bottom: 15px;
+  margin: 0px 0px 24px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 `;
 
 const Chip = styled.span`
-  font-size: 14px;
+  font-size: 0.8125rem;
+  padding: 12px;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.08);
   border-radius: 16px;
-  padding: 7px 10px;
+  letter-spacing: 0.1px;
+  cursor: default;
+  outline: 0px;
+  text-decoration: none;
+  border: 0px;
+  vertical-align: middle;
+  box-sizing: border-box;
 `;
 
 const Product: React.FC<Props> = ({ product }) => {
@@ -71,9 +84,9 @@ const Product: React.FC<Props> = ({ product }) => {
           <TypographyPrice>$ {product.price.current.value}</TypographyPrice>
           <TypographyStock>
             {product.availability.stock > 0 ? (
-              <Chip> In stock </Chip>
+              <Chip> in stock </Chip>
             ) : (
-              <Chip> Out of stock </Chip>
+              <Chip> out of stock </Chip>
             )}
           </TypographyStock>
         </CardContent>

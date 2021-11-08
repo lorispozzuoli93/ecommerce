@@ -11,16 +11,15 @@ type BgButton = {
 };
 
 const Box = styled.div`
-  margin-top: 20px;
-  margin-left: 8px;
-  margin-right: 180px;
+  margin-top: 22px;
   @media (min-width: 1280px) {
-    margin-left: 90px;
+    margin-left: 82px;
   }
   @media (min-width: 768px) {
     margin-right: -20px;
   }
   @media (max-width: 540px) {
+    margin-left: 10px;
     margin-right: 50px;
   }
   @media (max-width: 414px) {
@@ -35,8 +34,9 @@ const ButtonLeft = styled.button<BgButton>`
   color: ${(props) => (props.activeButton ? "#fff" : "#1976d2")};
   background-color: ${(props) =>
     props.activeButton ? "#1976d2" : "transparent"};
+  height: 36px;
   min-width: 64px;
-  padding: 6px 16px;
+  padding: 5px 15px;
   cursor: pointer;
   border: 1px solid rgba(25, 118, 210, 0.5);
   border-radius: 5px 0 0 5px;
@@ -45,29 +45,18 @@ const ButtonLeft = styled.button<BgButton>`
   line-height: 1.75;
   letter-spacing: 0.02857em;
   box-shadow: 0px 1.5px #888888;
+  vertical-align: middle;
+  align-items: center;
   transition: 250ms;
-  span.ripple {
-    position: absolute;
-    border-radius: 50%;
-    transform: scale(0);
-    animation: ripple 600ms linear;
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-
-  @keyframes ripple {
-    to {
-      transform: scale(4);
-      opacity: 0;
-    }
-  }
 `;
 
 const ButtonRight = styled.button<BgButton>`
   color: ${(props) => (props.activeButton ? "#fff" : "#1976d2")};
   background-color: ${(props) =>
     props.activeButton ? "#1976d2" : "transparent"};
+  height: 36px;
   min-width: 64px;
-  padding: 6px 16px;
+  padding: 5px 15px;
   cursor: pointer;
   border: 1px solid rgba(25, 118, 210, 0.5);
   border-radius: 0 5px 5px 0;
@@ -76,6 +65,7 @@ const ButtonRight = styled.button<BgButton>`
   line-height: 1.75;
   letter-spacing: 0.02857em;
   box-shadow: 0px 1.5px #888888;
+  vertical-align: middle;
   transition: 250ms;
 `;
 
