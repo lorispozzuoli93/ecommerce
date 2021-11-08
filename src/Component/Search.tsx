@@ -76,6 +76,7 @@ const SearchBarWrapper = styled.div`
 `;
 
 const ButtonReset = styled.button<AnimationButton>`
+  position: relative;
   margin-left: 10px;
   height: 35px;
   margin-top: 7px;
@@ -124,6 +125,7 @@ const SearchBox: React.FC<Props> = ({ searchQuery, setSearchQuery }) => (
       }}
     >
       RESET
+      <Ripple />
     </ButtonReset>
   </SearchBarWrapper>
 );
