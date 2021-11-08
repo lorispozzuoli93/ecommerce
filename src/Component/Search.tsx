@@ -14,14 +14,14 @@ type AnimationButton = {
 const Grid = styled.div`
   margin-right: 1px;
   @media (min-width: 1280px) {
-    margin-right: 115px;
+    margin-right: 117px;
   }
 `;
 
 const TextField = styled.input`
   font-size: 17px;
   padding: 10px;
-  padding-left: 20px;
+  padding-left: 19px;
   height: 34px;
   margin-right: 16px;
   border: 1px solid rgb(100, 100, 100, 0.5);
@@ -51,7 +51,7 @@ const Label = styled.label`
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: 13px;
+  left: 14px;
   top: 15px;
   transition: 0.2s ease all;
   ${TextField}:focus ~ & {
@@ -94,7 +94,7 @@ const ButtonReset = styled.button<AnimationButton>`
   letter-spacing: 0.02857em;
   text-transform: uppercase;
   min-width: 64px;
-  padding: 6px 16px;
+  padding: 6px 15.5px;
   border-radius: 4px;
   border: none;
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
