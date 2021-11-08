@@ -107,6 +107,9 @@ const ButtonReset = styled.button<AnimationButton>`
     transition: 2s;
     box-shadow: 5px 5px 20px 0px #000000;
   }
+  &:hover {
+    background-color: #155697;
+  }
 `;
 
 const SearchBox: React.FC<Props> = ({ searchQuery, setSearchQuery }) => (

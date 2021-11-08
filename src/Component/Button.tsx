@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 type Props = {
   toggle: string;
-  setToggle: (toggle: "none" |"in" | "out") => void;
+  setToggle: (toggle: "none" | "in" | "out") => void;
 };
 
 type BgButton = {
@@ -30,36 +30,14 @@ const Box = styled.div`
   }
 `;
 
-const ButtonLeft = styled.button<BgButton>`
-  color: ${(props) => (props.activeButton ? "#fff" : "#1976d2")};
-  background-color: ${(props) =>
-    props.activeButton ? "#1976d2" : "transparent"};
+const ToggleButton = styled.button<BgButton>`
+  background-color: transparent;
+  color: #1976d2;
   height: 36px;
   min-width: 64px;
   padding: 5px 15px;
   cursor: pointer;
   border: 1px solid rgba(25, 118, 210, 0.5);
-  border-radius: 5px 0 0 5px;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.75;
-  letter-spacing: 0.02857em;
-  box-shadow: 0px 1.5px #888888;
-  vertical-align: middle;
-  align-items: center;
-  transition: 250ms;
-`;
-
-const ButtonRight = styled.button<BgButton>`
-  color: ${(props) => (props.activeButton ? "#fff" : "#1976d2")};
-  background-color: ${(props) =>
-    props.activeButton ? "#1976d2" : "transparent"};
-  height: 36px;
-  min-width: 64px;
-  padding: 5px 15px;
-  cursor: pointer;
-  border: 1px solid rgba(25, 118, 210, 0.5);
-  border-radius: 0 5px 5px 0;
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.75;
@@ -67,25 +45,44 @@ const ButtonRight = styled.button<BgButton>`
   box-shadow: 0px 1.5px #888888;
   vertical-align: middle;
   transition: 250ms;
+  &.in {
+    border-radius: 5px 0 0 5px;
+  }
+  &.out {
+    border-radius: 0 5px 5px 0;
+  }
+  &:hover {
+    background-color: rgba(25, 118, 210, 0.04);
+    color: #1976d2;
+  }
+  &.selected {
+    background-color: #1976d2;
+    color: #fff;
+  }
+  &.selected:hover {
+    background-color: #155697;
+  }
 `;
 
 const ContainedButtons: React.FC<Props> = ({ toggle, setToggle }) => {
   return (
     <Box>
-      <ButtonLeft
+      <ToggleButton
+        className={toggle === "in" ? "in selected" : "in"}
         activeButton={toggle === "in"}
         onClick={() => (toggle === "in" ? setToggle("none") : setToggle("in"))}
       >
         IN STOCK
-      </ButtonLeft>
-      <ButtonRight
+      </ToggleButton>
+      <ToggleButton
+        className={toggle === "out" ? "out selected" : "out"}
         activeButton={toggle === "out"}
         onClick={() =>
           toggle === "out" ? setToggle("none") : setToggle("out")
         }
       >
         OUT OF STOCK
-      </ButtonRight>
+      </ToggleButton>
     </Box>
   );
 };
