@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 type Props = {
   toggle: string;
-  setToggle: (toggle: string) => void;
+  setToggle: (toggle: "none" |"in" | "out") => void;
 };
 
 type BgButton = {

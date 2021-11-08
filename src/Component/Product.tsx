@@ -13,6 +13,7 @@ const Card = styled.div`
   border-radius: 4px;
   box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
     rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 `;
 
 const Link = styled.a`
@@ -34,7 +35,6 @@ const CardContent = styled.div`
 const Typography = styled.h5`
   margin: 0px;
   padding-top: 12px;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.334;
@@ -43,7 +43,6 @@ const Typography = styled.h5`
 
 const TypographyPrice = styled.p`
   margin: 0px 0px 12px;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
@@ -53,7 +52,6 @@ const TypographyPrice = styled.p`
 
 const TypographyStock = styled.p`
   margin: 0px 0px 24px;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
 `;
 
 const Chip = styled.span`

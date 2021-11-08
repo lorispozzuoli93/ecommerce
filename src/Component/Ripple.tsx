@@ -35,7 +35,7 @@ const RippleContainer = styled.div<Props>`
 const useDebouncedRippleCleanUp = (
   rippleCount: number,
   duration: number,
-  cleanUpFunction: { (): void; (): void }
+  cleanUpFunction: any
 ) => {
   useLayoutEffect(() => {
     let bounce: any = null;

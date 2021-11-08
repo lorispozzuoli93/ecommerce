@@ -46,11 +46,10 @@ const GridProduct = styled.div`
 `;
 
 const Plp: React.FC = () => {
-  const [products, setProducts] = useState(allProducts);
+  // const [products, setProducts] = useState(allProducts);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const [searchQuery, setSearchQuery] = useState<string>("");
-
-  const [toggle, setToggle] = useState<string>("none");
+  const [toggle, setToggle] = useState<"none" | "in" | "out">("none");
 
   return (
     <Grid>
@@ -61,7 +60,7 @@ const Plp: React.FC = () => {
         setSearchQuery={setSearchQuery}
       />
       <GridProduct>
-        {products
+        {allProducts
           ?.filter((prod) => {
             switch (toggle) {
               case "in":

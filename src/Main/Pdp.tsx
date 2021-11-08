@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import { allProducts } from "../Data/Data";
 
 const Grid = styled.div`
-  height: 457px;
-  width: 457px;
+  display: grid;
+  grid-template-columns: 25%;
 `;
 
 const Pdp: React.FC = () => {

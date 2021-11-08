@@ -5,7 +5,7 @@ import Search from "../Component/Search";
 
 type Props = {
   toggle: string;
-  setToggle: (toggle: string) => void;
+  setToggle: (toggle: "none" |"in" | "out") => void;
   searchQuery: string;
   setSearchQuery: (searchQuery: string) => void;
 };
