@@ -46,7 +46,6 @@ const GridProduct = styled.div`
 `;
 
 const Plp: React.FC = () => {
-  // const [products, setProducts] = useState(allProducts);
   const [searchQuery, setSearchQuery] = useState("");
 
   const [toggle, setToggle] = useState<"none" | "in" | "out">("none");

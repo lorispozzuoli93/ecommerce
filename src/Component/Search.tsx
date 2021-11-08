@@ -83,6 +83,7 @@ const ButtonReset = styled.button<AnimationButton>`
   height: 36px;
   margin-top: 10px;
   overflow: hidden;
+  cursor: pointer;
   background: ${(props) => (props.colorBg ? "#1976d2" : "white")};
   color: ${(props) => (props.colorBg ? "white" : "#1976d2")};
   /* ripple effect */
@@ -99,17 +100,12 @@ const ButtonReset = styled.button<AnimationButton>`
   border: none;
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
     rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
-  &:hover {
-    background: rgb(21, 101, 192)
-      radial-gradient(circle, transparent 1%, rgb(21, 101, 192) 1%)
-      center/15000%;
-    box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px,
-      rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
-  }
+  transition: 0.8s;
   &:active {
-    background-color: white;
-    background-size: 100%;
-    transition: background 0s;
+    background-color: #1976d2;
+    opacity: 0.7;
+    transition: 2s;
+    box-shadow: 5px 5px 20px 0px #000000;
   }
 `;
 

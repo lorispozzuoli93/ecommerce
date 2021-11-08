@@ -52,7 +52,7 @@ const useDebouncedRippleCleanUp = (
   }, [rippleCount, duration, cleanUpFunction]);
 };
 
-const Ripple = ({ duration = 850, color = "#fff" }) => {
+const Ripple = ({ duration = 850, color = "rgba(255,255,255,0.4)" }) => {
   const [rippleArray, setRippleArray] = useState<any>([]);
 
   useDebouncedRippleCleanUp(rippleArray.length, duration, () => {
