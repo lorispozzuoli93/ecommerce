@@ -30,7 +30,7 @@ const Box = styled.div`
   }
 `;
 
-const ToggleButton = styled.button<BgButton>`
+const Button = styled.button<BgButton>`
   background-color: transparent;
   color: #1976d2;
   height: 36px;
@@ -54,6 +54,7 @@ const ToggleButton = styled.button<BgButton>`
   &:hover {
     background-color: rgba(25, 118, 210, 0.04);
     color: #1976d2;
+    border: 1px solid rgb(25, 118, 210);
   }
   &.selected {
     background-color: #1976d2;
@@ -67,14 +68,14 @@ const ToggleButton = styled.button<BgButton>`
 const ContainedButtons: React.FC<Props> = ({ toggle, setToggle }) => {
   return (
     <Box>
-      <ToggleButton
+      <Button
         className={toggle === "in" ? "in selected" : "in"}
         activeButton={toggle === "in"}
         onClick={() => (toggle === "in" ? setToggle("none") : setToggle("in"))}
       >
         IN STOCK
-      </ToggleButton>
-      <ToggleButton
+      </Button>
+      <Button
         className={toggle === "out" ? "out selected" : "out"}
         activeButton={toggle === "out"}
         onClick={() =>
@@ -82,7 +83,7 @@ const ContainedButtons: React.FC<Props> = ({ toggle, setToggle }) => {
         }
       >
         OUT OF STOCK
-      </ToggleButton>
+      </Button>
     </Box>
   );
 };

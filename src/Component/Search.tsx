@@ -86,8 +86,6 @@ const ButtonReset = styled.button<AnimationButton>`
   cursor: pointer;
   background: ${(props) => (props.colorBg ? "#1976d2" : "white")};
   color: ${(props) => (props.colorBg ? "white" : "#1976d2")};
-  /* ripple effect */
-  background-position: center;
   transition: background 0.5s;
   font-weight: 500;
   font-size: 0.875rem;
