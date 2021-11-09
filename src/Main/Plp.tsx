@@ -8,6 +8,7 @@ import Footer from "../Component/Footer";
 
 const Grid = styled.div`
   min-height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
 `;
@@ -26,6 +27,7 @@ const GridProduct = styled.div`
   }
   padding-top: 16px;
   padding-left: 16px;
+  padding-bottom: 84px;
   @media (max-width: 1280px) {
     padding-left: 5px;
   }
@@ -42,7 +44,6 @@ const GridProduct = styled.div`
     padding-left: 7px;
   }
   gap: 16px;
-  flex: 1;
 `;
 
 type Props = {

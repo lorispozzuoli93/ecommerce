@@ -3,18 +3,20 @@ import styled from "styled-components";
 
 const Box = styled.div`
   background-color: #bdbdbd;
-  display: flex;
-  flex-direction: row-reverse;
+  text-align: right;
   padding: 16px;
-  margin-top: 16px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 `;
 
-const ButtonLeft = styled.button`
+const Button = styled.a`
   display: inline-flex;
   background-color: transparent;
   cursor: pointer;
   text-decoration: none;
-  font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.75;
   letter-spacing: 0.02857em;
@@ -24,36 +26,19 @@ const ButtonLeft = styled.button`
   color: rgb(25, 118, 210);
   border: 0px;
   vertical-align: middle;
-`;
-
-const ButtonRight = styled.button`
-  display: inline-flex;
-  background-color: transparent;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.75;
-  letter-spacing: 0.02857em;
-  text-transform: uppercase;
-  min-width: 64px;
-  padding: 6px 8px;
-  color: rgb(25, 118, 210);
-  border-right: 1px solid rgb(25, 118, 210);
-  border-left: 0px;
-  border-top: 0px;
-  border-bottom: 0px;
-  vertical-align: middle;
+  &.border {
+    border-right: 1px solid rgb(25, 118, 210);
+  }
 `;
 
 const Footer: React.FC = () => {
   return (
     <Box>
-      <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
-        <ButtonLeft>FACEBOOK</ButtonLeft>
-      </a>
       <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
-        <ButtonRight>TWITTER</ButtonRight>
+        <Button className="border">TWITTER</Button>
+      </a>
+      <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+        <Button>FACEBOOK</Button>
       </a>
     </Box>
   );

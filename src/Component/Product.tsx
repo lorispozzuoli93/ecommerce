@@ -7,7 +7,6 @@ type Props = {
 };
 
 const Card = styled.div`
-  height: auto;
   background-color: rgb(255, 255, 255);
   color: rgba(0, 0, 0, 0.87);
   border-radius: 4px;
