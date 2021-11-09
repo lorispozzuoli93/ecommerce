@@ -1,9 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Product from "../Component/Product";
 import NavBar from "../Component/NavBar";
-import { allProducts } from "../Data/Data";
+import { Products } from "../Data/Data";
 import Footer from "../Component/Footer";
 
 const Grid = styled.div`
@@ -50,6 +50,16 @@ const Plp: React.FC = () => {
 
   const [toggle, setToggle] = useState<"none" | "in" | "out">("none");
 
+  const [products, setProducts] = useState<Products[]>([]);
+
+  useEffect(() => {
+    fetch(
+      "https://assets.fc-dev.instore.oakley.com/assets/products/products.json"
+    )
+      .then((res) => res.json())
+      .then((products) => setProducts(products));
+  }, []);
+
   return (
     <Grid>
       <NavBar
@@ -59,7 +69,7 @@ const Plp: React.FC = () => {
         setSearchQuery={setSearchQuery}
       />
       <GridProduct>
-        {allProducts
+        {products
           ?.filter((prod) => {
             switch (toggle) {
               case "in":
