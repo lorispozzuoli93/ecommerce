@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Product from "../Component/Product";
 import NavBar from "../Component/NavBar";
 import { Products } from "../Data/Data";
@@ -45,20 +45,14 @@ const GridProduct = styled.div`
   flex: 1;
 `;
 
-const Plp: React.FC = () => {
+type Props = {
+  products: Products[];
+};
+
+const Plp: React.FC<Props> = ({ products }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const [toggle, setToggle] = useState<"none" | "in" | "out">("none");
-
-  const [products, setProducts] = useState<Products[]>([]);
-
-  useEffect(() => {
-    fetch(
-      "https://assets.fc-dev.instore.oakley.com/assets/products/products.json"
-    )
-      .then((res) => res.json())
-      .then((products) => setProducts(products));
-  }, []);
 
   return (
     <Grid>
