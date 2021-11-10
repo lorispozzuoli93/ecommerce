@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../Store/store";
 
 export interface CounterState {
   value: string;
@@ -21,7 +20,5 @@ export const SearchSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { setSearchQuery } = SearchSlice.actions;
-
-export const selectSearchQuery = (state: RootState) => state.search.value;
 
 export default SearchSlice.reducer;

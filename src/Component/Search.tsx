@@ -1,7 +1,8 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { selectSearchQuery, setSearchQuery } from "../Slice/SearchSlice";
+import { setSearchQuery } from "../Slice/SearchSlice";
+import { RootState } from "../Store/store";
 import Ripple from "./Ripple";
 
 
@@ -109,7 +110,7 @@ const ButtonReset = styled.button<AnimationButton>`
 `;
 
 const Search: React.FC = () => {
-  const searchQuery = useSelector(selectSearchQuery);
+  const searchQuery = useSelector((state: RootState) => state.search.value);
   const dispatch = useDispatch();
 
   return (

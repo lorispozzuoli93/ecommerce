@@ -1,7 +1,8 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { selectToggle, setToggle } from "../Slice/ToggleSlice";
+import { setToggle } from "../Slice/ToggleSlice";
+import { RootState } from "../Store/store";
 
 type BgButton = {
   activeButton: boolean;
@@ -63,7 +64,7 @@ const Button = styled.button<BgButton>`
 `;
 
 const ContainedButtons: React.FC = () => {
-  const toggle = useSelector(selectToggle);
+  const toggle = useSelector((state: RootState) => state.toggle.value);
   const dispatch = useDispatch();
   return (
     <Box>
