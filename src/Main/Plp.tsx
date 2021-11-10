@@ -1,10 +1,12 @@
 import * as React from "react";
 import styled from "styled-components";
-import { useState } from "react";
 import Product from "../Component/Product";
 import NavBar from "../Component/NavBar";
 import { Products } from "../Data/Data";
 import Footer from "../Component/Footer";
+import { useSelector } from "react-redux";
+import { selectSearchQuery} from "../Slice/SearchSlice";
+import { selectToggle } from "../Slice/ToggleSlice";
 
 const Grid = styled.div`
   min-height: 100vh;
@@ -51,18 +53,13 @@ type Props = {
 };
 
 const Plp: React.FC<Props> = ({ products }) => {
-  const [searchQuery, setSearchQuery] = useState("");
+  const searchQuery = useSelector(selectSearchQuery);
 
-  const [toggle, setToggle] = useState<"none" | "in" | "out">("none");
+  const toggle = useSelector(selectToggle);
 
   return (
     <Grid>
-      <NavBar
-        toggle={toggle}
-        setToggle={setToggle}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-      />
+      <NavBar />
       <GridProduct>
         {products
           ?.filter((prod) => {

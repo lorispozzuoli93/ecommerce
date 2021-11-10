@@ -1,10 +1,7 @@
 import * as React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-
-type Props = {
-  toggle: string;
-  setToggle: (toggle: "none" | "in" | "out") => void;
-};
+import { selectToggle, setToggle } from "../Slice/ToggleSlice";
 
 type BgButton = {
   activeButton: boolean;
@@ -65,13 +62,17 @@ const Button = styled.button<BgButton>`
   }
 `;
 
-const ContainedButtons: React.FC<Props> = ({ toggle, setToggle }) => {
+const ContainedButtons: React.FC = () => {
+  const toggle = useSelector(selectToggle);
+  const dispatch = useDispatch();
   return (
     <Box>
       <Button
         className={toggle === "in" ? "in selected" : "in"}
         activeButton={toggle === "in"}
-        onClick={() => (toggle === "in" ? setToggle("none") : setToggle("in"))}
+        onClick={() =>
+          dispatch(toggle === "in" ? setToggle("none") : setToggle("in"))
+        }
       >
         IN STOCK
       </Button>
@@ -79,7 +80,7 @@ const ContainedButtons: React.FC<Props> = ({ toggle, setToggle }) => {
         className={toggle === "out" ? "out selected" : "out"}
         activeButton={toggle === "out"}
         onClick={() =>
-          toggle === "out" ? setToggle("none") : setToggle("out")
+          dispatch(toggle === "out" ? setToggle("none") : setToggle("out"))
         }
       >
         OUT OF STOCK

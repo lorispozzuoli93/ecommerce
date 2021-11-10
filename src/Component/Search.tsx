@@ -1,11 +1,9 @@
 import * as React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { selectSearchQuery, setSearchQuery } from "../Slice/SearchSlice";
 import Ripple from "./Ripple";
 
-type Props = {
-  searchQuery: string;
-  setSearchQuery: (searchQuery: string) => void;
-};
 
 type AnimationButton = {
   colorBg: boolean;
@@ -110,29 +108,28 @@ const ButtonReset = styled.button<AnimationButton>`
   }
 `;
 
-const SearchBox: React.FC<Props> = ({ searchQuery, setSearchQuery }) => (
-  <SearchBarWrapper>
-    <TextField
-      onChange={(e) => setSearchQuery(e.target.value)}
-      value={searchQuery}
-    />
-    <Label className={searchQuery === "" ? "" : "up"}>search</Label>
-    <ButtonReset
-      colorBg
-      onClick={() => {
-        setSearchQuery("");
-      }}
-    >
-      RESET
-      <Ripple />
-    </ButtonReset>
-  </SearchBarWrapper>
-);
+const Search: React.FC = () => {
+  const searchQuery = useSelector(selectSearchQuery);
+  const dispatch = useDispatch();
 
-const Search: React.FC<Props> = ({ searchQuery, setSearchQuery }) => {
   return (
     <Grid>
-      <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <SearchBarWrapper>
+        <TextField
+          onChange={(e) => dispatch(setSearchQuery(e.target.value))}
+          value={searchQuery}
+        />
+        <Label className={searchQuery === "" ? "" : "up"}>search</Label>
+        <ButtonReset
+          colorBg
+          onClick={() => {
+            dispatch(setSearchQuery(""));
+          }}
+        >
+          RESET
+          <Ripple />
+        </ButtonReset>
+      </SearchBarWrapper>
     </Grid>
   );
 };
