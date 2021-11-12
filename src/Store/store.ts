@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import searchReducer from "../Slice/SearchSlice";
-import toggleReducer from "../Slice/ToggleSlice";
+import searchReducer from "../Features/SearchSlice/SearchSlice";
+import toggleReducer from "../Features/ToggleSlice/ToggleSlice";
 
 export const store = configureStore({
   reducer: { search: searchReducer, toggle: toggleReducer },
