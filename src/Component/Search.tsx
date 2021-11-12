@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { setSearchQuery } from "../Features/SearchSlice/SearchSlice";
+import { searchActions } from "../Features/SearchSlice/SearchSlice";
 import { RootState } from "../Store/store";
 import Ripple from "./Ripple";
 
@@ -116,14 +116,14 @@ const Search: React.FC = () => {
     <Grid>
       <SearchBarWrapper>
         <TextField
-          onChange={(e) => dispatch(setSearchQuery(e.target.value))}
+          onChange={(e) => dispatch(searchActions.setSearchQuery(e.target.value))}
           value={searchQuery}
         />
         <Label className={searchQuery === "" ? "" : "up"}>search</Label>
         <ButtonReset
           colorBg
           onClick={() => {
-            dispatch(setSearchQuery(""));
+            dispatch(searchActions.setSearchQuery(""));
           }}
         >
           RESET

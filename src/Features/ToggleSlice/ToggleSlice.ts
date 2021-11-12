@@ -19,6 +19,6 @@ export const ToggleSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setToggle } = ToggleSlice.actions;
+export const toggleActions = ToggleSlice.actions;
 
 export default ToggleSlice.reducer;
