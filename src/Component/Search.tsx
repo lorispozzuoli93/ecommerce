@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { searchActions } from "../Features/SearchSlice/SearchSlice";
 import { RootState } from "../Store/store";
-import Ripple from "./Ripple";
+import Ripple from "../Effect/Ripple";
 
 const Grid = styled.div`
   margin-right: 1px;

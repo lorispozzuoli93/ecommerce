@@ -2,10 +2,6 @@ import * as React from "react";
 import styled from "styled-components";
 import { Products } from "../Data/Data";
 
-type Props = {
-  product: Products;
-};
-
 const Card = styled.div`
   background-color: rgb(255, 255, 255);
   color: rgba(0, 0, 0, 0.87);
@@ -70,6 +66,10 @@ const Chip = styled.span`
   vertical-align: middle;
   box-sizing: border-box;
 `;
+
+type Props = {
+  product: Products;
+};
 
 const Product: React.FC<Props> = ({ product }) => {
   return (
