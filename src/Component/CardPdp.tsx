@@ -3,24 +3,25 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Products } from "../Data/Data";
 
-const Typography = styled.h5`
-  margin: 0px;
-  padding-top: 12px;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.334;
-  letter-spacing: 0em;
-`;
-
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   gap: 10px;
+  column-gap: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
 `;
 
 const ContainerTitle = styled.div`
   grid-column: 1/4;
+`;
+
+const Typography = styled.h5`
+  margin: 0px;
+  font-size: 40px;
+  font-weight: bold;
 `;
 
 const ContainerMedia = styled.div`
@@ -28,46 +29,53 @@ const ContainerMedia = styled.div`
 `;
 
 const CardMedia = styled.img`
-  width: 100%;
+
 `;
 
-const ContainerText = styled.div``;
+const ContainerText = styled.div`
+  margin-right: 100px;
+`;
 
 const TypographyPrice = styled.p`
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  letter-spacing: 0.00938em;
-  color: rgba(0, 0, 0, 0.6);
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 0;
 `;
 
 const TypographyName = styled.p`
-  margin: 0px;
-  padding-top: 12px;
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.334;
-  letter-spacing: 0em;
-`;
-
-const TypographyUpc = styled.p`
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  letter-spacing: 0.00938em;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+  & span {
+    color: grey;
+  }
 `;
 
 const ButtonAddCart = styled.button`
   background-color: transparent;
-  border: 1px solid black;
-  border-radius: 4px;
+  border: 1px solid grey;
+  border-radius: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 45px;
+  padding-right: 45px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 25px;
 `;
 
 const ContainerColor = styled.div`
   grid-column: 1/4;
 `;
 
-const Grid = styled.div`
+const TypographyColors = styled.h5`
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+`;
+
+const GridImage = styled.div`
   display: grid;
   grid-template-columns: 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11%;
   cursor: pointer;
@@ -82,7 +90,8 @@ const CardPdp: React.FC<Props> = ({ product }) => {
     Products | Omit<Products, "variants"> | undefined
   >();
   useEffect(() => setVariant(product), [product]);
-
+  // const variant = useSelector(variantsSelector);
+  // const dispatch = useDispatch();
   return (
     <Container>
       {variant ? (
@@ -91,20 +100,28 @@ const CardPdp: React.FC<Props> = ({ product }) => {
             <Typography>{variant.name}</Typography>
           </ContainerTitle>
           <ContainerMedia>
-            <CardMedia src="https://via.placeholder.com/350" />
+            <CardMedia src="https://via.placeholder.com/1000x600" />
           </ContainerMedia>
           <ContainerText>
             <Typography>{variant.name}</Typography>
             <TypographyPrice>{variant.price.current.value} USD</TypographyPrice>
-            <TypographyName>Name: {variant.name}</TypographyName>
-            <TypographyName>Lens color: Green</TypographyName>
-            <TypographyName>Size: Standard</TypographyName>
-            <TypographyUpc>UPC: {variant.UPC}</TypographyUpc>
+            <TypographyName>
+              <span>Name:</span> {variant.name}
+            </TypographyName>
+            <TypographyName>
+              <span>Lens color:</span> Green
+            </TypographyName>
+            <TypographyName>
+              <span>Size:</span> Standard
+            </TypographyName>
+            <TypographyName>
+              <span>UPC:</span> {variant.UPC}
+            </TypographyName>
             <ButtonAddCart>Add to cart</ButtonAddCart>
           </ContainerText>
           <ContainerColor>
-            <Typography>Available colors:</Typography>
-            <Grid>
+            <TypographyColors>Available colors:</TypographyColors>
+            <GridImage>
               <img
                 alt={`Product${product.UPC}`}
                 src={`https://picsum.photos/200/200?random=${product.UPC}`}
@@ -117,7 +134,7 @@ const CardPdp: React.FC<Props> = ({ product }) => {
                   onClick={() => setVariant(prod)}
                 />
               ))}
-            </Grid>
+            </GridImage>
           </ContainerColor>
         </>
       ) : null}

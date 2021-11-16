@@ -2,8 +2,8 @@ import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { searchActions } from "../Features/SearchSlice/SearchSlice";
-import { RootState } from "../Store/store";
 import Ripple from "../Effect/Ripple";
+import { searchSelector } from "../Features/SearchSlice/SelectorSearch";
 
 const Grid = styled.div`
   margin-right: 1px;
@@ -109,7 +109,7 @@ type AnimationButton = {
 };
 
 const Search: React.FC = () => {
-  const searchQuery = useSelector((state: RootState) => state.search.value);
+  const searchQuery = useSelector(searchSelector);
   const dispatch = useDispatch();
 
   return (
