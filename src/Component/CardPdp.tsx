@@ -140,8 +140,6 @@ const CardPdp: React.FC<Props> = ({ product }) => {
     Products | Omit<Products, "variants"> | undefined
   >();
   useEffect(() => setVariant(product), [product]);
-  // const variant = useSelector(variantsSelector);
-  // const dispatch = useDispatch();
   return (
     <Grid>
       <>
@@ -184,8 +182,9 @@ const CardPdp: React.FC<Props> = ({ product }) => {
                     src={`https://picsum.photos/1000/600?random=${product.UPC}`}
                     onClick={() => setVariant(product)}
                   />
-                  {product.variants.map((prod) => (
+                  {product.variants.map((prod, index) => (
                     <img
+                      key={index}
                       alt={`Product${prod.UPC}`}
                       src={`https://picsum.photos/1000/600?random=${prod.UPC}`}
                       onClick={() => setVariant(prod)}

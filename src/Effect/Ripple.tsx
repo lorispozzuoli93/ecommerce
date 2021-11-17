@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 type Props = {
   color: any;
-  duration: any;
+  duration: number;
 };
 
 const RippleContainer = styled.div<Props>`
@@ -35,20 +35,22 @@ const RippleContainer = styled.div<Props>`
 const useDebouncedRippleCleanUp = (
   rippleCount: number,
   duration: number,
-  cleanUpFunction: any
+  cleanUpFunction: () => void
 ) => {
   useLayoutEffect(() => {
-    let bounce: any = null;
+    let bounce: null | NodeJS.Timeout = null;
     if (rippleCount > 0) {
-      clearTimeout(bounce);
+      bounce && clearTimeout(bounce);
 
       bounce = setTimeout(() => {
         cleanUpFunction();
-        clearTimeout(bounce);
+        bounce && clearTimeout(bounce);
       }, duration * 4);
     }
 
-    return () => clearTimeout(bounce);
+    return () => {
+      bounce && clearTimeout(bounce);
+    };
   }, [rippleCount, duration, cleanUpFunction]);
 };
 
