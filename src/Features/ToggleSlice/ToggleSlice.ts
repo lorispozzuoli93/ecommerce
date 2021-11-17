@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface CounterState {
+export interface ToggleState {
   value: "none" | "in" | "out";
 }
 
-const initialState: CounterState = {
+const initialState: ToggleState = {
   value: "none",
 };
 

@@ -74,8 +74,8 @@ const Plp: React.FC<Props> = ({ products }) => {
           .filter((prod) => {
             return prod.name.toLowerCase().includes(searchQuery.toLowerCase());
           })
-          .map((product, index) => (
-            <Product product={product} key={index} />
+          .map((product) => (
+            <Product product={product} key={product.UPC} />
           ))}
       </GridProduct>
       <Footer />

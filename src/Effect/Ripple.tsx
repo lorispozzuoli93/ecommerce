@@ -1,9 +1,8 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { MouseEvent, useState, useLayoutEffect } from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 type Props = {
-  color: any;
+  color: string;
   duration: number;
 };
 
@@ -55,17 +54,15 @@ const useDebouncedRippleCleanUp = (
 };
 
 const Ripple = ({ duration = 850, color = "rgba(255,255,255,0.4)" }) => {
-  const [rippleArray, setRippleArray] = useState<any>([]);
+  const [rippleArray, setRippleArray] = useState<
+    { x: number; y: number; size: number }[]
+  >([]);
 
   useDebouncedRippleCleanUp(rippleArray.length, duration, () => {
     setRippleArray([]);
   });
 
-  const addRipple = (event: {
-    currentTarget: { getBoundingClientRect: () => any };
-    pageX: number;
-    pageY: number;
-  }) => {
+  const addRipple = (event: MouseEvent) => {
     const rippleContainer = event.currentTarget.getBoundingClientRect();
     const size =
       rippleContainer.width > rippleContainer.height
@@ -85,7 +82,7 @@ const Ripple = ({ duration = 850, color = "rgba(255,255,255,0.4)" }) => {
   return (
     <RippleContainer duration={duration} color={color} onMouseDown={addRipple}>
       {rippleArray.length > 0 &&
-        rippleArray.map((ripple: any, index: any) => {
+        rippleArray.map((ripple, index) => {
           return (
             <span
               key={"span" + index}
@@ -100,11 +97,6 @@ const Ripple = ({ duration = 850, color = "rgba(255,255,255,0.4)" }) => {
         })}
     </RippleContainer>
   );
-};
-
-Ripple.propTypes = {
-  duration: PropTypes.number,
-  color: PropTypes.string,
 };
 
 export default Ripple;

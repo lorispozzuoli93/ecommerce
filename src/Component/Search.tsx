@@ -13,7 +13,7 @@ const Grid = styled.div`
 `;
 
 const TextField = styled.input`
-  font-size: 17px;
+  font-size: 1.063rem;
   padding: 10px;
   padding-left: 19px;
   height: 34px;
@@ -40,7 +40,7 @@ const TextField = styled.input`
 
 const Label = styled.label`
   color: gray;
-  font-size: 17px;
+  font-size: 1.063rem;
   letter-spacing: inherit;
   font-weight: normal;
   position: absolute;
@@ -50,7 +50,7 @@ const Label = styled.label`
   transition: 0.2s ease all;
   ${TextField}:focus ~ & {
     top: -10px;
-    font-size: 13px;
+    font-size: 0.813rem;
     color: #1976d2;
     background-color: white;
     width: 40px;
@@ -58,7 +58,7 @@ const Label = styled.label`
   }
   &.up {
     top: -10px;
-    font-size: 13px;
+    font-size: 0.813rem;
     color: #1976d2;
     background-color: white;
     width: 40px;

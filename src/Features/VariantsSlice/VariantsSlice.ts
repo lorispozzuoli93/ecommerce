@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface CounterState {
+export interface VariantsState {
   value: any;
 }
 
-const initialState: CounterState = {
+const initialState: VariantsState = {
   value: 0,
 };
 

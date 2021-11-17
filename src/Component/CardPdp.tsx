@@ -32,13 +32,13 @@ const ContainerTitle = styled.div`
 
 const TypographyTitle = styled.h5`
   margin: 0px;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: bold;
 `;
 
 const Typography = styled.h5`
   margin: 0px;
-  font-size: 35px;
+  font-size: 2.188rem;
   font-weight: bold;
 `;
 
@@ -65,13 +65,13 @@ const ContainerText = styled.div`
 `;
 
 const TypographyPrice = styled.p`
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: bold;
   margin-top: 0;
 `;
 
 const TypographyName = styled.p`
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: bold;
   margin: 0;
   & span {
@@ -87,7 +87,7 @@ const ButtonAddCart = styled.button`
   padding-bottom: 10px;
   padding-left: 45px;
   padding-right: 45px;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: bold;
   margin-top: 25px;
   @media (max-width: 540px) {
@@ -107,13 +107,18 @@ const ContainerColor = styled.div`
 
 const TypographyColors = styled.h5`
   margin: 0;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: bold;
   margin-bottom: 20px;
 `;
 
 const GridImage = styled.div`
-  grid-column: 1/4;
+  display: flex;
+  /* overflow: auto;
+  white-space: nowrap;
+  &::-webkit-scrollbar {
+    display: none;
+  } */
   & img {
     cursor: pointer;
     height: 150px;
@@ -177,19 +182,21 @@ const CardPdp: React.FC<Props> = ({ product }) => {
               <ContainerColor>
                 <TypographyColors>Available colors:</TypographyColors>
                 <GridImage>
+
                   <img
                     alt={`Product${product.UPC}`}
                     src={`https://picsum.photos/1000/600?random=${product.UPC}`}
                     onClick={() => setVariant(product)}
                   />
-                  {product.variants.map((prod, index) => (
+                  {product.variants.map((prod) => (
                     <img
-                      key={index}
+                      key={product.UPC}
                       alt={`Product${prod.UPC}`}
                       src={`https://picsum.photos/1000/600?random=${prod.UPC}`}
                       onClick={() => setVariant(prod)}
                     />
                   ))}
+
                 </GridImage>
               </ContainerColor>
             </>

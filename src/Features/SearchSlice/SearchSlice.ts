@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface CounterState {
+export interface SearchState {
   value: string;
 }
 
-const initialState: CounterState = {
+const initialState: SearchState = {
   value: "",
 };
 

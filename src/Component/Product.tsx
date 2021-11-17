@@ -12,6 +12,11 @@ const Card = styled.div`
   font-family: Roboto, Helvetica, Arial, sans-serif;
 `;
 
+const CardLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+`;
+
 const CardMedia = styled.img`
   width: 100%;
   border-top-right-radius: 4px;
@@ -70,10 +75,7 @@ type Props = {
 const Product: React.FC<Props> = ({ product }) => {
   return (
     <Card key={product.UPC}>
-      <Link
-        style={{ textDecoration: "none", color: "black"}}
-        to={`/product/${product.UPC}`}
-      >
+      <CardLink to={`/product/${product.UPC}`}>
         <CardMedia src="https://via.placeholder.com/350" />
         <CardContent>
           <Typography>{product.name}</Typography>
@@ -86,7 +88,7 @@ const Product: React.FC<Props> = ({ product }) => {
             )}
           </TypographyStock>
         </CardContent>
-      </Link>
+      </CardLink>
     </Card>
   );
 };
