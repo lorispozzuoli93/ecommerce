@@ -113,12 +113,11 @@ const TypographyColors = styled.h5`
 `;
 
 const GridImage = styled.div`
-  display: flex;
-  /* overflow: auto;
+  overflow: auto;
   white-space: nowrap;
   &::-webkit-scrollbar {
     display: none;
-  } */
+  }
   & img {
     cursor: pointer;
     height: 150px;
@@ -182,7 +181,6 @@ const CardPdp: React.FC<Props> = ({ product }) => {
               <ContainerColor>
                 <TypographyColors>Available colors:</TypographyColors>
                 <GridImage>
-
                   <img
                     alt={`Product${product.UPC}`}
                     src={`https://picsum.photos/1000/600?random=${product.UPC}`}
@@ -190,7 +188,7 @@ const CardPdp: React.FC<Props> = ({ product }) => {
                   />
                   {product.variants.map((prod) => (
                     <img
-                      key={product.UPC}
+                      key={prod.UPC}
                       alt={`Product${prod.UPC}`}
                       src={`https://picsum.photos/1000/600?random=${prod.UPC}`}
                       onClick={() => setVariant(prod)}
