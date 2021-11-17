@@ -53,7 +53,7 @@ const ContainerMedia = styled.div`
 const CardMedia = styled.img`
   @media (max-width: 540px) {
     height: 350px;
-    width: 350px;
+    width: 450px;
   }
 `;
 
@@ -116,10 +116,18 @@ const GridImage = styled.div`
   grid-column: 1/4;
   & img {
     cursor: pointer;
+    height: 150px;
+    width: 200px;
+    margin-right: 25px;
   }
   margin-bottom: 100px;
   @media (max-width: 540px) {
     margin-bottom: 25px;
+    & img {
+      height: 100px;
+      width: 150px;
+      margin-right: 20px;
+    }
   }
 `;
 
@@ -145,7 +153,9 @@ const CardPdp: React.FC<Props> = ({ product }) => {
                 <TypographyTitle>{variant.name}</TypographyTitle>
               </ContainerTitle>
               <ContainerMedia>
-                <CardMedia src="https://via.placeholder.com/1000x600" />
+                <CardMedia
+                  src={`https://picsum.photos/1000/600?random=${variant.UPC}`}
+                />
               </ContainerMedia>
               <ContainerText>
                 <Typography>{variant.name}</Typography>
@@ -171,13 +181,13 @@ const CardPdp: React.FC<Props> = ({ product }) => {
                 <GridImage>
                   <img
                     alt={`Product${product.UPC}`}
-                    src={`https://via.placeholder.com/200/200?random=${product.UPC}`}
+                    src={`https://picsum.photos/1000/600?random=${product.UPC}`}
                     onClick={() => setVariant(product)}
                   />
                   {product.variants.map((prod) => (
                     <img
                       alt={`Product${prod.UPC}`}
-                      src={`https://picsum.photos/200/200?random=${prod.UPC}`}
+                      src={`https://picsum.photos/1000/600?random=${prod.UPC}`}
                       onClick={() => setVariant(prod)}
                     />
                   ))}
