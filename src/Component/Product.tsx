@@ -12,11 +12,6 @@ const Card = styled.div`
   font-family: Roboto, Helvetica, Arial, sans-serif;
 `;
 
-const StyledLink = styled.a`
-  text-decoration: none;
-  color: black;
-`;
-
 const CardMedia = styled.img`
   width: 100%;
   border-top-right-radius: 4px;
@@ -75,21 +70,22 @@ type Props = {
 const Product: React.FC<Props> = ({ product }) => {
   return (
     <Card key={product.UPC}>
-      <Link to={`/product/${product.UPC}`}>
-        <StyledLink>
-          <CardMedia src="https://via.placeholder.com/350" />
-          <CardContent>
-            <Typography>{product.name}</Typography>
-            <TypographyPrice>$ {product.price.current.value}</TypographyPrice>
-            <TypographyStock>
-              {product.availability.stock > 0 ? (
-                <Chip> in stock </Chip>
-              ) : (
-                <Chip> out of stock </Chip>
-              )}
-            </TypographyStock>
-          </CardContent>
-        </StyledLink>
+      <Link
+        style={{ textDecoration: "none", color: "black"}}
+        to={`/product/${product.UPC}`}
+      >
+        <CardMedia src="https://via.placeholder.com/350" />
+        <CardContent>
+          <Typography>{product.name}</Typography>
+          <TypographyPrice>$ {product.price.current.value}</TypographyPrice>
+          <TypographyStock>
+            {product.availability.stock > 0 ? (
+              <Chip> in stock </Chip>
+            ) : (
+              <Chip> out of stock </Chip>
+            )}
+          </TypographyStock>
+        </CardContent>
       </Link>
     </Card>
   );
