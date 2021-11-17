@@ -171,7 +171,7 @@ const CardPdp: React.FC<Props> = ({ product }) => {
                 <GridImage>
                   <img
                     alt={`Product${product.UPC}`}
-                    src={`https://picsum.photos/200/200?random=${product.UPC}`}
+                    src={`https://via.placeholder.com/200/200?random=${product.UPC}`}
                     onClick={() => setVariant(product)}
                   />
                   {product.variants.map((prod) => (
