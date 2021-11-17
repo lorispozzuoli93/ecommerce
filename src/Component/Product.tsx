@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Products } from "../Data/Data";
 
@@ -11,7 +12,7 @@ const Card = styled.div`
   font-family: Roboto, Helvetica, Arial, sans-serif;
 `;
 
-const Link = styled.a`
+const StyledLink = styled.a`
   text-decoration: none;
   color: black;
 `;
@@ -74,19 +75,21 @@ type Props = {
 const Product: React.FC<Props> = ({ product }) => {
   return (
     <Card key={product.UPC}>
-      <Link href={`/product/${product.UPC}`}>
-        <CardMedia src="https://via.placeholder.com/350" />
-        <CardContent>
-          <Typography>{product.name}</Typography>
-          <TypographyPrice>$ {product.price.current.value}</TypographyPrice>
-          <TypographyStock>
-            {product.availability.stock > 0 ? (
-              <Chip> in stock </Chip>
-            ) : (
-              <Chip> out of stock </Chip>
-            )}
-          </TypographyStock>
-        </CardContent>
+      <Link to={`/product/${product.UPC}`}>
+        <StyledLink>
+          <CardMedia src="https://via.placeholder.com/350" />
+          <CardContent>
+            <Typography>{product.name}</Typography>
+            <TypographyPrice>$ {product.price.current.value}</TypographyPrice>
+            <TypographyStock>
+              {product.availability.stock > 0 ? (
+                <Chip> in stock </Chip>
+              ) : (
+                <Chip> out of stock </Chip>
+              )}
+            </TypographyStock>
+          </CardContent>
+        </StyledLink>
       </Link>
     </Card>
   );
