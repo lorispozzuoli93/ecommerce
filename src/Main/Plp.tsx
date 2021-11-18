@@ -17,35 +17,18 @@ const Grid = styled.div`
 
 const GridProduct = styled.div`
   display: grid;
-  grid-template-columns: 24.15% 24.15% 24.15% 24.15%;
-  @media (max-width: 1280px) {
-    grid-template-columns: 24% 24% 24% 24%;
-  }
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
   @media (max-width: 1024px) {
-    grid-template-columns: 45% 45%;
+    grid-template-columns: repeat(2, 1fr);
   }
   @media (max-width: 414px) {
-    grid-template-columns: 98%;
+    grid-template-columns: 1fr;
   }
   padding-top: 16px;
-  padding-left: 16px;
+  padding-left: 0.85%;
+  padding-right: 0.85%;
   padding-bottom: 84px;
-  @media (max-width: 1280px) {
-    padding-left: 5px;
-  }
-  @media (max-width: 1024px) {
-    padding-left: 55px;
-  }
-  @media (max-width: 768px) {
-    padding-left: 40px;
-  }
-  @media (max-width: 540px) {
-    padding-left: 25px;
-  }
-  @media (max-width: 414px) {
-    padding-left: 7px;
-  }
-  gap: 16px;
 `;
 
 type Props = {

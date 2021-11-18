@@ -145,6 +145,7 @@ const CardPdp: React.FC<Props> = ({ product }) => {
     Products | Omit<Products, "variants"> | undefined
   >();
   useEffect(() => setVariant(product), [product]);
+
   return (
     <Grid>
       <>
