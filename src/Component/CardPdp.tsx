@@ -14,8 +14,7 @@ const Grid = styled.div`
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   column-gap: 20px;
   margin-left: 2.5%;
