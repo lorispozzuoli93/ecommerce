@@ -90,6 +90,7 @@ const ButtonAddCart = styled.button`
   font-size: 1.375rem;
   font-weight: bold;
   margin-top: 25px;
+  cursor: pointer;
   @media (max-width: 540px) {
     position: relative;
     left: 300px;
@@ -194,7 +195,6 @@ const CardPdp: React.FC<Props> = ({ product }) => {
                       onClick={() => setVariant(prod)}
                     />
                   ))}
-
                 </GridImage>
               </ContainerColor>
             </>
