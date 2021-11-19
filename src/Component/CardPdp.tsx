@@ -15,7 +15,7 @@ const Grid = styled.div`
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  row-gap: 20px;
   column-gap: 20px;
   margin-left: 2.5%;
   margin-right: 2.5%;
@@ -35,7 +35,7 @@ const TypographyTitle = styled.h5`
   font-weight: bold;
 `;
 
-const Typography = styled.h5`
+const Typography = styled.p`
   margin: 0px;
   font-size: 2.188rem;
   font-weight: bold;
@@ -105,7 +105,7 @@ const ContainerColor = styled.div`
   }
 `;
 
-const TypographyColors = styled.h5`
+const TypographyColors = styled.p`
   margin: 0;
   font-size: 1.375rem;
   font-weight: bold;
