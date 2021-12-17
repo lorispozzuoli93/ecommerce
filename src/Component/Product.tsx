@@ -59,6 +59,7 @@ const Chip = styled.span`
   color: rgba(0, 0, 0, 0.87);
   background-color: rgba(0, 0, 0, 0.08);
   border-radius: 16px;
+<<<<<<< HEAD
   letter-spacing: 0.1px;
   cursor: default;
   outline: 0px;
@@ -66,6 +67,10 @@ const Chip = styled.span`
   border: 0px;
   vertical-align: middle;
   box-sizing: border-box;
+=======
+  padding: 7px 10px;
+  
+>>>>>>> parent of 991cdb3 (corretto bottoni in stock con props)
 `;
 
 type Props = {
@@ -75,8 +80,16 @@ type Props = {
 const Product: React.FC<Props> = ({ product }) => {
   return (
     <Card key={product.UPC}>
+<<<<<<< HEAD
       <CardLink to={`/product/${product.UPC}`}>
         <CardMedia src="https://via.placeholder.com/350" />
+=======
+      <Link
+        to={`/product/${product.UPC}`}
+        style={{ textDecoration: "none", color: "black" }}
+      >
+        <CardMedia />
+>>>>>>> parent of 991cdb3 (corretto bottoni in stock con props)
         <CardContent>
           <Typography>{product.name}</Typography>
           <TypographyPrice>$ {product.price.current.value}</TypographyPrice>

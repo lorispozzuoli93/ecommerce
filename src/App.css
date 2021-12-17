@@ -1,1 +1,4 @@
-
+.bg-button:focus {     
+    color: #fff;
+    background-color: #1976d2;  
+}
